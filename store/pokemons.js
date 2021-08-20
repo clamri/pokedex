@@ -28,10 +28,12 @@ export const mutations = {
 };
 
 export const actions = {
-    async getAll({ commit }) {
-        commit('setLoading');
-        const data = await this.$PokemonService.getAll();
-        commit('setList', data);
+    async getAll({ commit, state }) {
+        if (!state.loaded) {
+            commit('setLoading');
+            const data = await this.$PokemonService.getAll();
+            commit('setList', data);
+        }
     },
     async getMore({ commit, state }) {
         if (state.loaded && state.next) {

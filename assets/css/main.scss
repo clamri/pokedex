@@ -1,0 +1,24 @@
+.container {
+    @media screen and (min-width: 1280px) {
+        max-width: 1216px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media (max-width: 1279px) {
+        margin: 0 1rem;
+    }
+}
+
+::-webkit-scrollbar{
+    width: 0.6rem
+}
+::-webkit-scrollbar-track{
+    background:#fff;
+}
+::-webkit-scrollbar-thumb{
+    background:#0059b280;
+}
+::-webkit-scrollbar-thumb:hover{
+    background:#0059b280;
+}

@@ -1,6 +1,9 @@
 <template>
     <header>
-        <h1>Pokédex</h1>
+        <h1>
+            <base-link-animation-underline to="/"
+                                           label="Pokédex" />
+        </h1>
     </header>
 </template>
 

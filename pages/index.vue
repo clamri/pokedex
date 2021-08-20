@@ -16,8 +16,10 @@
                 <p>Ok !</p>
                 <ul class="pokemon-list">
                     <li v-for="pokemon in pokemons"
-                        :key="pokemon.name"
-                        class="pokemon-card">{{ pokemon.name }}</li>
+                        :key="pokemon.name">
+                        <nuxt-link :to="`/${pokemon.name}`"
+                                   class="pokemon-card">{{ pokemon.name }}</nuxt-link>
+                    </li>
                 </ul>
             </template>
         </main>

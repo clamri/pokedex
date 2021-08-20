@@ -40,4 +40,12 @@ export const actions = {
             commit('concatList', data);
         }
     },
+    async getOne({ state }, { name }) {
+        const pokemon = state.list ? state.list.find(_ => _.name === name) : null;
+        if (pokemon) {
+            return pokemon;
+        } else {
+            return await this.$PokemonService.getOne(name);
+        }
+    },
 };

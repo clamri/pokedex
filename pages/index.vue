@@ -4,6 +4,10 @@
         <main>
             <h2>Bienvenue</h2>
 
+            <pokemon-form-search ref="form-search"
+                                 @found="showPokemon($event)"
+                                 @error="showError($event)" />
+
             <template v-if="$fetchState.error">
                 <p>Une erreur est survenue</p>
             </template>
@@ -14,13 +18,26 @@
 
             <template v-else>
                 <p>Ok !</p>
-                <ul class="pokemon-list">
-                    <li v-for="pokemon in pokemons"
-                        :key="pokemon.name">
-                        <nuxt-link :to="`/${pokemon.name}`"
-                                   class="pokemon-card">{{ pokemon.name }}</nuxt-link>
-                    </li>
-                </ul>
+
+                <template v-if="displaySearchingResult">
+                    <div v-if="searchingPokemon">
+                        <pokemon-card :pokemon="searchingPokemon" />
+                    </div>
+                    <p v-else>Aucun pokémon de ce nom trouvé !</p>
+
+                    <base-button label="Voir tous les pokémons"
+                                 class="primary"
+                                 @click="showAll()" />
+                </template>
+
+                <template v-else>
+                    <ul class="pokemon-list">
+                        <li v-for="pokemon in pokemons"
+                            :key="pokemon.name">
+                            <pokemon-card :pokemon="pokemon" />
+                        </li>
+                    </ul>
+                </template>
             </template>
         </main>
     </div>
@@ -30,6 +47,12 @@
 export default {
     async fetch() {
         await this.$store.dispatch('pokemons/getAll');
+    },
+    data() {
+        return {
+            displaySearchingResult: false,
+            searchingPokemon: null,
+        }
     },
     computed: {
         pokemons() {
@@ -53,6 +76,19 @@ export default {
                 this.$store.dispatch('pokemons/getMore');
             }
         },
+        showPokemon(pokemon) {
+            this.searchingPokemon = pokemon;
+            this.displaySearchingResult = true;
+        },
+        showError(error) {
+            // todo: if error status !== 404, log it somewhere for debug and remove next line after
+            console.log(error);
+            this.displaySearchingResult = true;
+        },
+        showAll() {
+            this.displaySearchingResult = false;
+            this.$refs['form-search'].resetForm();
+        }
     },
     beforeDestroy() {
         document.removeEventListener("scroll", this.handleScroll);
@@ -73,15 +109,5 @@ main {
     flex-wrap: wrap;
     list-style: none;
     padding: 0;
-
-    .pokemon-card {
-        position: relative;
-        background-color: white;
-        border-radius: 2rem;
-        padding: 4rem 2rem 2rem;
-        margin: 3rem 2rem;
-        min-height: 12rem;
-        min-width: 28rem;
-    }
 }
 </style>

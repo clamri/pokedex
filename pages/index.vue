@@ -111,5 +111,9 @@ main {
     flex-wrap: wrap;
     list-style: none;
     padding: 0;
+
+    ::v-deep .pokemon-card {
+        margin: 5rem 2rem 3rem;
+    }
 }
 </style>

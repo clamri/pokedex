@@ -14,7 +14,7 @@ export default {
     },
     methods: {
         addToTeam() {
-            this.$store.dispatch('team/addOne', { pokemon: this.pokemon });
+            this.$store.dispatch('team/addOne', { pokemon: { id: this.pokemon.id, name: this.pokemon.name } });
         }
     }
 }

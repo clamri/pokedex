@@ -10,16 +10,16 @@ export const mutations = {
     setLoading(state) {
         state.loaded = false;
     },
-    setList(state, { count, next, previous, results }) {
-        state.list = [...results];
+    setList(state, { count, next, previous, pokemons }) {
+        state.list = [...pokemons];
 
         state.loaded = true;
         state.count = count;
         state.next = next;
         state.previous = previous;
     },
-    concatList(state, { next, previous, results }) {
-        state.list = [...state.list, ...results];
+    concatList(state, { next, previous, pokemons }) {
+        state.list = [...state.list, ...pokemons];
 
         state.loaded = true;
         state.next = next;
@@ -28,18 +28,22 @@ export const mutations = {
 };
 
 export const actions = {
-    async getAll({ commit, state }) {
+    async getAll({ commit, state, dispatch }) {
         if (!state.loaded) {
             commit('setLoading');
             const data = await this.$PokemonService.getAll();
-            commit('setList', data);
+
+            const pokemons = await dispatch('getDetailledPokemons', data);
+            commit('setList', { ...data, pokemons });
         }
     },
-    async getMore({ commit, state }) {
+    async getMore({ commit, state, dispatch }) {
         if (state.loaded && state.next) {
             commit('setLoading');
             const data = (await this.$axios.get(state.next))?.data;
-            commit('concatList', data);
+
+            const pokemons = await dispatch('getDetailledPokemons', data);
+            commit('concatList', { ...data, pokemons });
         }
     },
     async getOne({ state }, { name }) {
@@ -47,7 +51,27 @@ export const actions = {
         if (pokemon) {
             return pokemon;
         } else {
-            return await this.$PokemonService.getOne(name);
+            const pokemon = await this.$PokemonService.getOne(name);
+            return {
+                id: pokemon.id,
+                order: pokemon.order,
+                name: pokemon.name,
+                sprite: pokemon.sprites.other['official-artwork'].front_default,
+                types: pokemon.types,
+            };
         }
     },
+
+    async getDetailledPokemons({ }, { results }) {
+        const promisesArray = results.map(async result => (await this.$axios.get(result.url)).data);
+        return (await Promise.all(promisesArray)).map(pokemon => {
+            return {
+                id: pokemon.id,
+                order: pokemon.order,
+                name: pokemon.name,
+                sprite: pokemon.sprites.other['official-artwork'].front_default,
+                types: pokemon.types,
+            }
+        });
+    }
 };

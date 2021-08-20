@@ -18,6 +18,12 @@
                 <p>Ok !</p>
                 <h3>{{ pokemon.name }}</h3>
 
+                <img class="pokemon-sprite"
+                     :src="pokemon.sprite"
+                     alt="" />
+
+                <!-- todo: display more information -->
+
                 <pokemon-to-team-button :pokemon="pokemon" />
             </template>
         </main>

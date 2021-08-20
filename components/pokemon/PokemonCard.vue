@@ -2,6 +2,11 @@
     <div>
         <nuxt-link :to="`/${pokemon.name}`"
                    class="pokemon-card">
+
+            <img class="pokemon-sprite"
+                 :src="pokemon.sprite"
+                 alt="" />
+
             {{ pokemon.name }}
         </nuxt-link>
 
@@ -31,8 +36,17 @@ export default {
     background-color: white;
     border-radius: 2rem;
     padding: 4rem 2rem 2rem;
-    margin: 3rem 2rem;
     min-height: 12rem;
     min-width: 28rem;
+
+    .pokemon-sprite {
+        position: absolute;
+        top: -4rem;
+        height: 8rem;
+        width: 8rem;
+        left: 50%;
+        transform: translateX(-50%);
+        object-fit: contain;
+    }
 }
 </style>

@@ -1,6 +1,12 @@
 <template>
-    <nuxt-link :to="`/${pokemon.name}`"
-               class="pokemon-card">{{ pokemon.name }}</nuxt-link>
+    <div>
+        <nuxt-link :to="`/${pokemon.name}`"
+                   class="pokemon-card">
+            {{ pokemon.name }}
+        </nuxt-link>
+
+        <pokemon-to-team-button :pokemon="pokemon" />
+    </div>
 </template>
 
 <script>
@@ -9,6 +15,11 @@ export default {
         pokemon: {
             type: Object,
             required: true
+        }
+    },
+    methods: {
+        addToTeam() {
+            this.$store.dispatch('team/addOne', { pokemon: this.pokemon });
         }
     }
 }

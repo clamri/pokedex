@@ -4,6 +4,8 @@
         <main>
             <h2>Bienvenue</h2>
 
+            <team />
+
             <pokemon-form-search ref="form-search"
                                  @found="showPokemon($event)"
                                  @error="showError($event)" />

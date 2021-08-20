@@ -4,6 +4,8 @@
         <main>
             <h2>Bienvenue</h2>
 
+            <team />
+
             <template v-if="$fetchState.error">
                 <p>Une erreur est survenue</p>
             </template>
@@ -14,7 +16,9 @@
 
             <template v-else>
                 <p>Ok !</p>
-                <p>{{ pokemon.name }}</p>
+                <h3>{{ pokemon.name }}</h3>
+
+                <pokemon-to-team-button :pokemon="pokemon" />
             </template>
         </main>
     </div>

@@ -22,7 +22,7 @@
 
                 <!-- todo: display more information -->
 
-                <pokemon-to-team-button :pokemon="pokemon" />
+                <team-button-add-pokemon :pokemon="pokemon" />
             </template>
         </main>
     </div>

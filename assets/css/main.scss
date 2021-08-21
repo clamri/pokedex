@@ -13,8 +13,12 @@
 .hovered-border {
     border: 2px solid transparent;
 
-    &:hover,
-    &:focus {
+    &:disabled {
+        cursor: default;
+    }
+
+    &:hover:not(:disabled),
+    &:focus:not(:disabled) {
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
         outline: none;
 
@@ -25,6 +29,10 @@
 .uppercase {
     text-transform: uppercase;
     letter-spacing: 0.1rem;
+}
+
+.capitalize {
+    text-transform: capitalize;
 }
 
 ::-webkit-scrollbar {

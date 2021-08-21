@@ -61,9 +61,8 @@ button {
         transform: translate(-50%, -50%);
     }
 
-    &.primary {
-        background-color: $primary-color;
-        color: $white;
+    &.primary,
+    &.secondary {
         border-radius: 1rem;
         font-weight: 600;
         padding: 1rem 3rem;
@@ -72,7 +71,7 @@ button {
         justify-content: center;
         border: solid 2px transparent;
 
-        &:disabled {
+        :disabled {
             background-color: #eeeeee;
             color: $black;
             cursor: not-allowed;
@@ -80,8 +79,26 @@ button {
 
         &:hover,
         &:focus {
-            border-color: $dark-primary-color;
             outline: none;
+        }
+    }
+
+    &.primary {
+        background-color: $primary-color;
+        color: $white;
+
+        &:hover,
+        &:focus {
+            border-color: $dark-primary-color;
+        }
+    }
+
+    &.secondary {
+        background-color: $background-color;
+
+        &:hover,
+        &:focus {
+            border-color: $primary-color;
         }
     }
 }

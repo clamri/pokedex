@@ -32,7 +32,7 @@
                     <ul class="pokemon-list">
                         <li v-for="pokemon in pokemons"
                             :key="pokemon.name">
-                            <pokemon-card :pokemon="pokemon" />
+                            <pokemon-card-link :pokemon="pokemon" />
                         </li>
                     </ul>
                 </template>

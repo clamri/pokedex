@@ -9,6 +9,9 @@ export const mutations = {
     addToList(state, { pokemon }) {
         state.list = [...state.list, ...[pokemon]];
     },
+    removeFromList(state, { index }) {
+        state.list = [...state.list.slice(0, index), ...state.list.slice(index + 1)];
+    }
 };
 
 export const actions = {
@@ -17,6 +20,10 @@ export const actions = {
     },
     async addOne({ commit, state }, { pokemon }) {
         commit('addToList', { pokemon });
+        localStorage.setItem('team', JSON.stringify(state.list));
+    },
+    async removeOne({ commit, state }, { index }) {
+        commit('removeFromList', { index });
         localStorage.setItem('team', JSON.stringify(state.list));
     },
 };

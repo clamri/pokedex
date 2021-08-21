@@ -11,7 +11,7 @@
             <div class="pokemon-informations">
                 <div class="pokemon-id uppercase">#{{ ('' + pokemon.id).padStart(3, '0') }}
                 </div>
-                <div class="pokemon-name">{{ pokemon.name }}</div>
+                <div class="pokemon-name capitalize">{{ pokemon.name }}</div>
 
                 <div class="pokemon-types">
                     <span v-for="type in pokemon.types"
@@ -22,7 +22,7 @@
             </div>
         </nuxt-link>
 
-        <pokemon-to-team-button :pokemon="pokemon" />
+        <team-button-add-pokemon :pokemon="pokemon" />
     </div>
 </template>
 
@@ -103,7 +103,6 @@ export default {
         .pokemon-name {
             font-weight: bold;
             color: $white;
-            text-transform: capitalize;
             font-size: 2.5rem;
 
             @media (min-width: 992px) {

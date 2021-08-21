@@ -1,5 +1,5 @@
 <template>
-    <div class="pokemon-card">
+    <div class="pokemon-card-link">
         <nuxt-link :to="`/${pokemon.name}`"
                    class="pokemon-link hovered-border"
                    :class="[`background-color-${pokemon.defaultType}-medium-opacity`, `border-color-${pokemon.defaultType}`]">
@@ -43,9 +43,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.pokemon-card {
+.pokemon-card-link {
     position: relative;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     .pokemon-link {
         background-color: $white;
@@ -61,6 +63,7 @@ export default {
         @media (max-width: 991px) {
             display: flex;
             padding: 1rem;
+            width: 100%;
         }
 
         .pokemon-sprite {

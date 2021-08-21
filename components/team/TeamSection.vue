@@ -1,5 +1,5 @@
 <template>
-    <div class="team">
+    <section class="team-section">
         <h2 class="team-title">Mon équipe</h2>
 
         <client-only>
@@ -19,7 +19,7 @@
                             :pokemon="selectedPokemonForModal"
                             :index="selectedPokemonIndex"
                             @close="closePokemonModal()" />
-    </div>
+    </section>
 </template>
 
 
@@ -53,7 +53,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.team {
+.team-section {
     background-color: white;
     border-radius: 1rem;
     padding: 2rem;
@@ -78,9 +78,7 @@ export default {
     padding: 0;
 }
 
-.pokemon-card {
-    position: relative;
-    display: inline-block;
+.pokemon-card-button {
     margin: 1rem;
 }
 </style>

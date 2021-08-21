@@ -2,41 +2,43 @@
     <div>
         <app-header />
         <main>
-            <team />
+            <team-section />
 
-            <pokemon-form-search ref="form-search"
-                                 @found="showPokemon($event)"
-                                 @error="showError($event)" />
+            <section>
+                <pokemon-form-search ref="form-search"
+                                     @found="showPokemon($event)"
+                                     @error="showError($event)" />
 
-            <template v-if="$fetchState.error">
-                <p>Une erreur est survenue</p>
-            </template>
+                <template v-if="$fetchState.error">
+                    <p>Une erreur est survenue</p>
+                </template>
 
-            <template v-else-if="$fetchState.pending ">
-                <p>Chargement en cours</p>
-            </template>
-
-            <template v-else>
-                <div v-if="displaySearchingResult"
-                     class="pokemon-found">
-                    <pokemon-card v-if="searchingPokemon"
-                                  :pokemon="searchingPokemon" />
-                    <p v-else>Aucun pokémon de ce nom trouvé !</p>
-
-                    <base-button label="Voir tous les pokémons"
-                                 class="show-all-button primary uppercase"
-                                 @click="showAll()" />
-                </div>
+                <template v-else-if="$fetchState.pending ">
+                    <p>Chargement en cours</p>
+                </template>
 
                 <template v-else>
-                    <ul class="pokemon-list">
-                        <li v-for="pokemon in pokemons"
-                            :key="pokemon.name">
-                            <pokemon-card-link :pokemon="pokemon" />
-                        </li>
-                    </ul>
+                    <div v-if="displaySearchingResult"
+                         class="pokemon-found">
+                        <pokemon-card-link v-if="searchingPokemon"
+                                           :pokemon="searchingPokemon" />
+                        <p v-else>Aucun pokémon de ce nom trouvé !</p>
+
+                        <base-button label="Voir tous les pokémons"
+                                     class="show-all-button primary uppercase"
+                                     @click="showAll()" />
+                    </div>
+
+                    <template v-else>
+                        <ul class="pokemon-list">
+                            <li v-for="pokemon in pokemons"
+                                :key="pokemon.name">
+                                <pokemon-card-link :pokemon="pokemon" />
+                            </li>
+                        </ul>
+                    </template>
                 </template>
-            </template>
+            </section>
         </main>
     </div>
 </template>
@@ -96,16 +98,6 @@ export default {
 
 
 <style lang="scss" scoped>
-main {
-    background-color: #f6f8fc;
-    padding: 2rem 5rem;
-    min-height: calc(100vh - #{$header-height});
-
-    @media (max-width: 992px) {
-        padding: 2rem;
-    }
-}
-
 .pokemon-list {
     display: flex;
     justify-content: center;
@@ -119,7 +111,7 @@ main {
         }
     }
 
-    ::v-deep .pokemon-card {
+    ::v-deep .pokemon-card-link {
         margin: 5rem 2rem 3rem;
 
         @media (max-width: 991px) {

@@ -52,28 +52,28 @@ export const actions = {
             return pokemon;
         } else {
             const pokemon = await this.$PokemonService.getOne(name);
-            return {
-                id: pokemon.id,
-                order: pokemon.order,
-                name: pokemon.name,
-                sprite: pokemon.sprites.other['official-artwork'].front_default,
-                defaultType: pokemon.types[0].type.name,
-                types: pokemon.types,
-            };
+            return getUsefulInformations({ pokemon });
         }
     },
 
     async getDetailledPokemons({ }, { results }) {
         const promisesArray = results.map(async result => (await this.$axios.get(result.url)).data);
-        return (await Promise.all(promisesArray)).map(pokemon => {
-            return {
-                id: pokemon.id,
-                order: pokemon.order,
-                name: pokemon.name,
-                sprite: pokemon.sprites.other['official-artwork'].front_default,
-                defaultType: pokemon.types[0].type.name,
-                types: pokemon.types,
-            }
-        });
-    }
+        return (await Promise.all(promisesArray))
+            .filter(pokemon => pokemon.order !== -1 && pokemon.sprites?.other['official-artwork']?.front_default)
+            .map(pokemon => getUsefulInformations({ pokemon }));
+    },
 };
+
+function getUsefulInformations({ pokemon }) {
+    return {
+        id: pokemon.id,
+        order: pokemon.order,
+        name: pokemon.name,
+        sprite: pokemon.sprites?.other['official-artwork']?.front_default,
+        defaultType: pokemon.types && pokemon.types[0].type.name,
+        types: pokemon.types,
+        height: pokemon.height,
+        width: pokemon.width,
+        species: pokemon.species
+    }
+}

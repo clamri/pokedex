@@ -1,3 +1,13 @@
+main {
+    background-color: $background-color;
+    padding: 2rem 5rem;
+    min-height: calc(100vh - #{$header-height});
+
+    @media (max-width: 992px) {
+        padding: 2rem;
+    }
+}
+
 .container {
     @media screen and (min-width: 1280px) {
         max-width: 1216px;
@@ -37,6 +47,7 @@
 
 ::-webkit-scrollbar {
     width: 0.6rem;
+    height: 0.6rem;
 }
 ::-webkit-scrollbar-track {
     background: $white;

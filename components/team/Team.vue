@@ -2,25 +2,27 @@
     <div class="team">
         <h2 class="team-title">Mon équipe</h2>
 
-        <p v-if="team.length === 0"
-           class="information">Aucun pokémon ajouté à l'équipe pour le moment !</p>
-        <ul class="pokemon-list">
-            <li v-for="(pokemon, index) in team"
-                :key="index"
-                class="pokemon-card">
-                <button type="button"
-                        class="pokemon-button hovered-border"
-                        :class="[`background-color-${pokemon.defaultType}-medium-opacity`, `border-color-${pokemon.defaultType}`]"
-                        @click="doSomething(pokemon)">
+        <client-only>
+            <p v-if="team.length === 0"
+               class="information">Aucun pokémon ajouté à l'équipe pour le moment !</p>
+            <ul class="pokemon-list">
+                <li v-for="(pokemon, index) in team"
+                    :key="index"
+                    class="pokemon-card">
+                    <button type="button"
+                            class="pokemon-button hovered-border"
+                            :class="[`background-color-${pokemon.defaultType}-medium-opacity`, `border-color-${pokemon.defaultType}`]"
+                            @click="doSomething(pokemon)">
 
-                    <img class="pokemon-sprite"
-                         :src="pokemon.sprite"
-                         alt="" />
+                        <img class="pokemon-sprite"
+                             :src="pokemon.sprite"
+                             alt="" />
 
-                    <div class="pokemon-name">{{ pokemon.name }}</div>
-                </button>
-            </li>
-        </ul>
+                        <div class="pokemon-name">{{ pokemon.name }}</div>
+                    </button>
+                </li>
+            </ul>
+        </client-only>
     </div>
 </template>
 

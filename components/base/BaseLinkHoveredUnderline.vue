@@ -21,8 +21,7 @@ export default {
 
 <style lang="scss" scoped>
 a {
-    color: $white;
-
+    color: $black;
     span {
         position: relative;
 
@@ -36,14 +35,14 @@ a {
             transform-origin: 0 0;
             transition: transform 0.5s;
             width: 100%;
-            background: $white;
+            background: $black;
         }
     }
 
     &:hover,
     &:focus {
         outline: none;
-        color: $white;
+        color: $black;
 
         span::after {
             transform: scaleX(1) translate3d(-50%, 0, 0);

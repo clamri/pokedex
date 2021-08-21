@@ -1,42 +1,37 @@
 <template>
-    <div>
-        <app-header />
-        <main>
-            <team-section />
+    <layout-default>
+        <section slot="content">
+            <template v-if="$fetchState.error">
+                <p>Une erreur est survenue</p>
+            </template>
 
-            <section>
-                <template v-if="$fetchState.error">
-                    <p>Une erreur est survenue</p>
-                </template>
+            <template v-else-if="$fetchState.pending ">
+                <p>Chargement en cours</p>
+            </template>
 
-                <template v-else-if="$fetchState.pending ">
-                    <p>Chargement en cours</p>
-                </template>
+            <template v-else>
+                <article class="pokemon-article">
+                    <section class="main-informations"
+                             :class="[`background-color-${pokemon.defaultType}-medium-opacity`]">
+                        <h2 class="pokemon-name capitalize">{{ pokemon.name }}</h2>
 
-                <template v-else>
-                    <article class="pokemon-article">
-                        <section class="main-informations"
-                                 :class="[`background-color-${pokemon.defaultType}-medium-opacity`]">
-                            <h2 class="pokemon-name capitalize">{{ pokemon.name }}</h2>
+                        <img class="pokemon-sprite"
+                             :src="pokemon.sprite"
+                             alt="" />
 
-                            <img class="pokemon-sprite"
-                                 :src="pokemon.sprite"
-                                 alt="" />
+                        <team-button-add-pokemon :pokemon="pokemon" />
+                    </section>
 
-                            <team-button-add-pokemon :pokemon="pokemon" />
-                        </section>
+                    <!-- todo: display more information -->
 
-                        <!-- todo: display more information -->
-
-                        <section class="more-informations">
-                            <h3 class="section-title uppercase">Évolutions</h3>
-                            <pokemon-evolutions :evolution-chain="evolution_chain" />
-                        </section>
-                    </article>
-                </template>
-            </section>
-        </main>
-    </div>
+                    <section class="more-informations">
+                        <h3 class="section-title uppercase">Évolutions</h3>
+                        <pokemon-evolutions :evolution-chain="evolution_chain" />
+                    </section>
+                </article>
+            </template>
+        </section>
+    </layout-default>
 </template>
 
 <script>
@@ -65,6 +60,7 @@ export default {
     background-color: white;
     margin-top: 2rem;
     border-radius: 2rem;
+    position: relative;
 
     section {
         padding: 4rem 2rem;

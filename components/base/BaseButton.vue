@@ -72,7 +72,7 @@ button {
     &.secondary {
         border-radius: 1rem;
         font-weight: 600;
-        padding: 0.75rem 3rem;
+        padding: 0.75rem 2rem;
         display: flex;
         align-items: center;
         justify-content: center;

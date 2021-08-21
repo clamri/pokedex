@@ -57,6 +57,7 @@ export default {
     background-color: white;
     border-radius: 1rem;
     padding: 2rem;
+    position: relative;
 
     .team-title {
         font-size: 1.8rem;

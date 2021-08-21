@@ -1,46 +1,41 @@
 <template>
-    <div>
-        <app-header />
-        <main>
-            <team-section />
+    <layout-default>
+        <section slot="content">
+            <pokemon-form-search ref="form-search"
+                                 @found="showPokemon($event)"
+                                 @error="showError($event)" />
 
-            <section>
-                <pokemon-form-search ref="form-search"
-                                     @found="showPokemon($event)"
-                                     @error="showError($event)" />
+            <template v-if="$fetchState.error">
+                <p>Une erreur est survenue</p>
+            </template>
 
-                <template v-if="$fetchState.error">
-                    <p>Une erreur est survenue</p>
-                </template>
+            <template v-else-if="$fetchState.pending ">
+                <p>Chargement en cours</p>
+            </template>
 
-                <template v-else-if="$fetchState.pending ">
-                    <p>Chargement en cours</p>
-                </template>
+            <template v-else>
+                <div v-if="displaySearchingResult"
+                     class="pokemon-found">
+                    <pokemon-card-link v-if="searchingPokemon"
+                                       :pokemon="searchingPokemon" />
+                    <p v-else>Aucun pokémon de ce nom trouvé !</p>
+
+                    <base-button label="Voir tous les pokémons"
+                                 class="show-all-button primary uppercase"
+                                 @click="showAll()" />
+                </div>
 
                 <template v-else>
-                    <div v-if="displaySearchingResult"
-                         class="pokemon-found">
-                        <pokemon-card-link v-if="searchingPokemon"
-                                           :pokemon="searchingPokemon" />
-                        <p v-else>Aucun pokémon de ce nom trouvé !</p>
-
-                        <base-button label="Voir tous les pokémons"
-                                     class="show-all-button primary uppercase"
-                                     @click="showAll()" />
-                    </div>
-
-                    <template v-else>
-                        <ul class="pokemon-list">
-                            <li v-for="pokemon in pokemons"
-                                :key="pokemon.name">
-                                <pokemon-card-link :pokemon="pokemon" />
-                            </li>
-                        </ul>
-                    </template>
+                    <ul class="pokemon-list">
+                        <li v-for="pokemon in pokemons"
+                            :key="pokemon.name">
+                            <pokemon-card-link :pokemon="pokemon" />
+                        </li>
+                    </ul>
                 </template>
-            </section>
-        </main>
-    </div>
+            </template>
+        </section>
+    </layout-default>
 </template>
 
 <script>

@@ -1,6 +1,6 @@
 <template>
     <header>
-        <h1>
+        <h1 class="uppercase">
             <base-link-hovered-underline to="/"
                                          label="Pokédex" />
         </h1>
@@ -9,20 +9,20 @@
 
 <style lang="scss" scoped>
 header {
-    background-color: $primary-color;
+    background-color: $background-color;
     position: relative;
     display: flex;
     align-items: center;
     align-content: center;
-    justify-content: space-between;
+    justify-content: center;
     height: $header-height;
 
     h1 {
-        letter-spacing: 0.1rem;
         padding: 1.3rem 2rem;
         font-size: 2rem;
         line-height: 2rem;
-        color: $white;
+        margin-top: 1rem;
+        z-index: 1;
     }
 }
 </style>

@@ -41,7 +41,6 @@ export default {
         height: 5rem;
         width: 5rem;
         object-fit: contain;
-        transition: all 0.5s;
     }
 
     .pokemon-name {
@@ -49,6 +48,31 @@ export default {
         color: $white;
         font-size: 1.8rem;
         text-align: center;
+    }
+
+    &:hover,
+    &:focus {
+        .pokemon-sprite {
+            animation: spriteSwing 0.6s linear;
+        }
+    }
+
+    @keyframes spriteSwing {
+        from {
+            transform: rotate(0);
+        }
+        25% {
+            transform: rotate(-10deg);
+        }
+        50% {
+            transform: rotate(0);
+        }
+        75% {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(0);
+        }
     }
 }
 </style>

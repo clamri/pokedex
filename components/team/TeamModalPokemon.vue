@@ -7,8 +7,13 @@
             </h1>
         </template>
         <template slot="body">
-            <pokemon-card-button :pokemon="pokemon"
-                                 disabled />
+            <div class="pokemon-informations">
+                <pokemon-card-button :pokemon="pokemon"
+                                     disabled />
+                <nuxt-link :to="`/${pokemon.name}`"
+                           class="see-pokemon-link"
+                           @click.native="closePokemonModal()">Voir le pokémon</nuxt-link>
+            </div>
 
             <team-form-surname @update="updateSurname($event)" />
         </template>
@@ -57,6 +62,18 @@ export default {
 .team-modal-pokemon {
     ::v-deep .modal-body {
         text-align: center;
+    }
+}
+
+.pokemon-informations {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .see-pokemon-link {
+        margin-top: 0.5rem;
+        font-size: 1.2rem;
+        text-decoration: underline;
     }
 }
 

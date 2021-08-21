@@ -28,7 +28,7 @@ export default {
             try {
                 if (this.searchValue) {
                     this.isSearching = true;
-                    const searchingPokemon = await this.$store.dispatch('pokemons/getOne', { name: this.searchValue });
+                    const searchingPokemon = await this.$store.dispatch('pokemons/getOne', { name: this.searchValue.toLowerCase() });
                     this.isSearching = false;
                     this.$emit('found', searchingPokemon);
                 }

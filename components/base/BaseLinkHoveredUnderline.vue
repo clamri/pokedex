@@ -21,7 +21,8 @@ export default {
 
 <style lang="scss" scoped>
 a {
-    color: var(--white);
+    color: $white;
+
     span {
         position: relative;
 
@@ -30,17 +31,20 @@ a {
             position: absolute;
             height: 0.2rem;
             left: 50%;
-            bottom: -0.4rem;
+            bottom: -0.5rem;
             transform: scaleX(0) translate3d(-50%, 0, 0);
             transform-origin: 0 0;
             transition: transform 0.5s;
             width: 100%;
-            background: var(--white);
+            background: $white;
         }
     }
 
     &:hover,
     &:focus {
+        outline: none;
+        color: $white;
+
         span::after {
             transform: scaleX(1) translate3d(-50%, 0, 0);
         }

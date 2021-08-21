@@ -1,0 +1,64 @@
+// full opacity
+%background-color-type {
+    &.background-color-grass { background-color: $grass; }
+    &.background-color-water { background-color: $water; }
+    &.background-color-fire { background-color: $fire; }
+    &.background-color-normal { background-color: $normal; }
+    &.background-color-electric { background-color: $electric; }
+    &.background-color-ice { background-color: $ice; }
+    &.background-color-fighting { background-color: $fighting; }
+    &.background-color-poison { background-color: $poison; }
+    &.background-color-ground { background-color: $ground; }
+    &.background-color-flying { background-color: $flying; }
+    &.background-color-psychic { background-color: $psychic; }
+    &.background-color-bug { background-color: $bug; }
+    &.background-color-rock { background-color: $rock; }
+    &.background-color-ghost { background-color: $ghost; }
+    &.background-color-dragon { background-color: $dragon; }
+    &.background-color-dark { background-color: $dark; }
+    &.background-color-steel { background-color: $steel; }
+    &.background-color-fairy { background-color: $fairy; }
+}
+
+// opacity 0.5
+%background-color-type-medium-opacity {
+    &.background-color-grass-medium-opacity { background-color: $grass-medium-opacity; }
+    &.background-color-water-medium-opacity { background-color: $water-medium-opacity; }
+    &.background-color-fire-medium-opacity { background-color: $fire-medium-opacity; }
+    &.background-color-normal-medium-opacity { background-color: $normal-medium-opacity; }
+    &.background-color-electric-medium-opacity { background-color: $electric-medium-opacity; }
+    &.background-color-ice-medium-opacity { background-color: $ice-medium-opacity; }
+    &.background-color-fighting-medium-opacity { background-color: $fighting-medium-opacity; }
+    &.background-color-poison-medium-opacity { background-color: $poison-medium-opacity; }
+    &.background-color-ground-medium-opacity { background-color: $ground-medium-opacity; }
+    &.background-color-flying-medium-opacity { background-color: $flying-medium-opacity; }
+    &.background-color-psychic-medium-opacity { background-color: $psychic-medium-opacity; }
+    &.background-color-bug-medium-opacity { background-color: $bug-medium-opacity; }
+    &.background-color-rock-medium-opacity { background-color: $rock-medium-opacity; }
+    &.background-color-ghost-medium-opacity { background-color: $ghost-medium-opacity; }
+    &.background-color-dragon-medium-opacity { background-color: $dragon-medium-opacity; }
+    &.background-color-dark-medium-opacity { background-color: $dark-medium-opacity; }
+    &.background-color-steel-medium-opacity { background-color: $steel-medium-opacity; }
+    &.background-color-fairy-medium-opacity { background-color: $fairy-medium-opacity; }
+}
+
+%border-color-type {
+    &.border-color-grass { border-color: $grass; }
+    &.border-color-water { border-color: $water; }
+    &.border-color-fire { border-color: $fire; }
+    &.border-color-normal { border-color: $normal; }
+    &.border-color-electric { border-color: $electric; }
+    &.border-color-ice { border-color: $ice; }
+    &.border-color-fighting { border-color: $fighting; }
+    &.border-color-poison { border-color: $poison; }
+    &.border-color-ground { border-color: $ground; }
+    &.border-color-flying { border-color: $flying; }
+    &.border-color-psychic { border-color: $psychic; }
+    &.border-color-bug { border-color: $bug; }
+    &.border-color-rock { border-color: $rock; }
+    &.border-color-ghost { border-color: $ghost; }
+    &.border-color-dragon { border-color: $dragon; }
+    &.border-color-dark { border-color: $dark; }
+    &.border-color-steel { border-color: $steel; }
+    &.border-color-fairy { border-color: $fairy; }
+}

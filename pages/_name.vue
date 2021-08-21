@@ -46,25 +46,8 @@ export default {
 
 <style lang="scss" scoped>
 main {
-    background-color: #f6f8fc;
+    background-color: $background-color;
     padding: 5rem;
-}
-
-.pokemon-list {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    list-style: none;
-    padding: 0;
-
-    .pokemon-card {
-        position: relative;
-        background-color: white;
-        border-radius: 2rem;
-        padding: 4rem 2rem 2rem;
-        margin: 3rem 2rem;
-        min-height: 12rem;
-        min-width: 28rem;
-    }
+    min-height: calc(100vh - #{$header-height});
 }
 </style>

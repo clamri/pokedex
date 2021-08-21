@@ -62,26 +62,26 @@ button {
     }
 
     &.primary {
-        background-color: var(--primary-color);
-        color: var(--white);
-        border-radius: 999px;
-        text-transform: uppercase;
+        background-color: $primary-color;
+        color: $white;
+        border-radius: 1rem;
         font-weight: 600;
         padding: 1rem 3rem;
         display: flex;
         align-items: center;
-        min-width: 20rem;
         justify-content: center;
-        letter-spacing: 0.1rem;
+        border: solid 2px transparent;
 
         &:disabled {
             background-color: #eeeeee;
-            color: var(--black);
+            color: $black;
             cursor: not-allowed;
         }
 
-        &:hover {
-            box-shadow: inset 0 0 0 99999px rgba(255, 255, 255, 0.25);
+        &:hover,
+        &:focus {
+            border-color: $dark-primary-color;
+            outline: none;
         }
     }
 }

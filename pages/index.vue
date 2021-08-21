@@ -19,18 +19,16 @@
             </template>
 
             <template v-else>
-                <p>Ok !</p>
-
-                <template v-if="displaySearchingResult">
-                    <div v-if="searchingPokemon">
-                        <pokemon-card :pokemon="searchingPokemon" />
-                    </div>
+                <div v-if="displaySearchingResult"
+                     class="pokemon-found">
+                    <pokemon-card v-if="searchingPokemon"
+                                  :pokemon="searchingPokemon" />
                     <p v-else>Aucun pokémon de ce nom trouvé !</p>
 
                     <base-button label="Voir tous les pokémons"
-                                 class="primary"
+                                 class="show-all-button primary uppercase"
                                  @click="showAll()" />
-                </template>
+                </div>
 
                 <template v-else>
                     <ul class="pokemon-list">
@@ -103,6 +101,11 @@ export default {
 main {
     background-color: #f6f8fc;
     padding: 5rem;
+    min-height: calc(100vh - #{$header-height});
+
+    @media (max-width: 992px) {
+        padding: 2rem;
+    }
 }
 
 .pokemon-list {
@@ -112,8 +115,30 @@ main {
     list-style: none;
     padding: 0;
 
+    @media (max-width: 991px) {
+        li {
+            width: 100%;
+        }
+    }
+
     ::v-deep .pokemon-card {
         margin: 5rem 2rem 3rem;
+
+        @media (max-width: 991px) {
+            margin: 1rem 0;
+            width: 100%;
+        }
+    }
+}
+
+.pokemon-found {
+    margin: 5rem 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .show-all-button {
+        margin-top: 5rem;
     }
 }
 </style>

@@ -1,7 +1,6 @@
 <template>
     <div class="field">
-        <label v-if="label"
-               :for="name">{{ label }}</label>
+        <label :for="name">{{ label }}</label>
 
         <input v-bind="$attrs"
                :id="name"
@@ -51,18 +50,8 @@ export default {
 
 <style lang="scss" scoped>
 .field {
-    margin: 0 0 2rem;
+    margin: 0 0 1.8rem;
     position: relative;
-
-    &:focus-within {
-        label {
-            color: var(--primary-color);
-            opacity: 1;
-        }
-        input {
-            border-bottom: 2px solid var(--primary-color);
-        }
-    }
 
     label {
         color: rgba(0, 0, 0, 0.87);
@@ -76,14 +65,38 @@ export default {
         display: block;
         width: 100%;
         border: none;
-        padding: 1.5rem;
+        padding: 1rem;
         box-sizing: border-box;
         font-size: 1.5rem;
         flex: 1;
-        background-color: var(--white);
+        background-color: $white;
 
         &:focus {
-            outline: dotted thin var(--black);
+            outline: none;
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        height: 0.2rem;
+        left: 2rem;
+        bottom: -0.2rem;
+        transform: scaleX(0);
+        transform-origin: center left;
+        transition: transform 0.5s;
+        width: 70%;
+        background: $primary-color;
+    }
+
+    &:focus-within {
+        label {
+            color: $primary-color;
+            opacity: 1;
+        }
+
+        &::after {
+            transform: scaleX(1);
         }
     }
 }

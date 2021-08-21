@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto|Dekko&display=swap');
+@use 'https://fonts.googleapis.com/css?family=Roboto&display=swap';
 
 html {
     font-size: 62.5%;
@@ -7,7 +7,7 @@ html {
 body {
     font-size: 1.5rem;
     font-family: Roboto, 'Helvetica Neue', sans-serif;
-    color: var(--black);
+    color: $black;
     word-spacing: 1px;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -41,12 +41,12 @@ select {
 
 a {
     text-decoration: none;
-    color: var(--black);
+    color: $black;
     display: inline-block;
 
     &:hover,
     &:focus {
-        color: var(--primary-color);
+        color: $primary-color
     }
 }
 
@@ -57,5 +57,5 @@ button {
     background-color: transparent;
     cursor: pointer;
     font-family: Roboto, 'Helvetica Neue', sans-serif;
-    color: var(--black);
+    color: $black;
 }

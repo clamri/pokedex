@@ -9,7 +9,7 @@
                     required />
 
         <base-button label="Chercher"
-                     class="primary"
+                     class="primary uppercase"
                      :isLoading="isSearching"
                      type="submit" />
     </form>
@@ -45,4 +45,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+form {
+    display: flex;
+    align-items: center;
+
+    .field {
+        margin-right: 2rem;
+        flex: 1;
+
+        &:focus-within ::v-deep label {
+            opacity: 0;
+        }
+
+        ::v-deep label {
+            opacity: 0;
+        }
+
+        ::v-deep input {
+            border-radius: 1rem;
+            min-width: 20rem;
+        }
+    }
+}
 </style>

@@ -17,7 +17,6 @@ export default {
   css: [
     '~/assets/css/reset.scss',
     '~/assets/css/main.scss',
-    '~/assets/css/var.scss',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -30,6 +29,7 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '@nuxtjs/style-resources',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -48,6 +48,12 @@ export default {
     manifest: {
       lang: 'en'
     }
+  },
+
+  // Style Resources module configuration: https://github.com/nuxt-community/style-resources-module
+  styleResources: {
+    scss: ['./assets/css/_var.scss', './assets/css/_colors.scss'],
+    hoistUseStatements: true  // Hoists the "@use" imports
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

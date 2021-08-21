@@ -8,7 +8,7 @@
              :src="pokemon.sprite"
              alt="" />
 
-        <div class="pokemon-name capitalize">{{ pokemon.name }}</div>
+        <div class="pokemon-name capitalize">{{ pokemon.surname ? pokemon.surname : pokemon.name }}</div>
     </button>
 </template>
 

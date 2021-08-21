@@ -79,6 +79,14 @@ export default {
             padding: 0.5rem 1.5rem 1.5rem;
             display: flex;
             justify-content: space-between;
+
+            @media (max-width: 991px) {
+                flex-direction: column;
+
+                button:not(:last-child) {
+                    margin-bottom: 1rem;
+                }
+            }
         }
     }
 

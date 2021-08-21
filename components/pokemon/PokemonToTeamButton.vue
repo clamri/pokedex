@@ -1,7 +1,7 @@
 <template>
     <base-button label="Ajouter à mon équipe"
                  class="pokemon-to-team-button uppercase hovered-border"
-                 :class="[`border-color-${pokemon.types[0].type.name}`]"
+                 :class="[`border-color-${pokemon.defaultType}`]"
                  @click="addToTeam()" />
 </template>
 
@@ -15,7 +15,7 @@ export default {
     },
     methods: {
         addToTeam() {
-            this.$store.dispatch('team/addOne', { pokemon: { id: this.pokemon.id, name: this.pokemon.name } });
+            this.$store.dispatch('team/addOne', { pokemon: { id: this.pokemon.id, name: this.pokemon.name, sprite: this.pokemon.sprite, defaultType: this.pokemon.types[0].type.name } });
         }
     }
 }

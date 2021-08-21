@@ -2,8 +2,6 @@
     <div>
         <app-header />
         <main>
-            <h2>Bienvenue</h2>
-
             <team />
 
             <template v-if="$fetchState.error">
@@ -47,7 +45,7 @@ export default {
 <style lang="scss" scoped>
 main {
     background-color: $background-color;
-    padding: 5rem;
+    padding: 2rem 5rem;
     min-height: calc(100vh - #{$header-height});
 }
 </style>

@@ -57,6 +57,7 @@ export const actions = {
                 order: pokemon.order,
                 name: pokemon.name,
                 sprite: pokemon.sprites.other['official-artwork'].front_default,
+                defaultType: pokemon.types[0].type.name,
                 types: pokemon.types,
             };
         }
@@ -70,6 +71,7 @@ export const actions = {
                 order: pokemon.order,
                 name: pokemon.name,
                 sprite: pokemon.sprites.other['official-artwork'].front_default,
+                defaultType: pokemon.types[0].type.name,
                 types: pokemon.types,
             }
         });

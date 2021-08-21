@@ -2,7 +2,7 @@
     <div class="pokemon-card">
         <nuxt-link :to="`/${pokemon.name}`"
                    class="pokemon-link hovered-border"
-                   :class="[`background-color-${pokemon.types[0].type.name}-medium-opacity`, `border-color-${pokemon.types[0].type.name}`]">
+                   :class="[`background-color-${pokemon.defaultType}-medium-opacity`, `border-color-${pokemon.defaultType}`]">
 
             <img class="pokemon-sprite"
                  :src="pokemon.sprite"
@@ -104,7 +104,6 @@ export default {
             font-weight: bold;
             color: $white;
             text-transform: capitalize;
-            font-family: sans-serif;
             font-size: 2.5rem;
 
             @media (min-width: 992px) {

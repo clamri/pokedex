@@ -2,8 +2,6 @@
     <div>
         <app-header />
         <main>
-            <h2>Bienvenue</h2>
-
             <team />
 
             <pokemon-form-search ref="form-search"
@@ -100,7 +98,7 @@ export default {
 <style lang="scss" scoped>
 main {
     background-color: #f6f8fc;
-    padding: 5rem;
+    padding: 2rem 5rem;
     min-height: calc(100vh - #{$header-height});
 
     @media (max-width: 992px) {

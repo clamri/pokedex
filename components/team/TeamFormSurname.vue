@@ -58,7 +58,7 @@ form {
         }
     }
 
-    @media (max-width: 991px) {
+    @media (max-width: $media-width-max-sm) {
         flex-direction: column;
 
         .field {

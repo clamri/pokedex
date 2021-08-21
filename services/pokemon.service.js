@@ -11,4 +11,8 @@ export default class PokemonService {
     static getOne = async (name) => {
         return (await this.$axios.get(`${API_BASE_URL}${API_POKEMON}/${name}`))?.data;
     }
+
+    static getFromUrl = async (url) => {
+        return (await this.$axios.get(`${url}`))?.data;
+    }
 }

@@ -43,9 +43,11 @@
 export default {
     async fetch() {
         this.pokemon = await this.$store.dispatch('pokemons/getOne', { name: this.$route.params.name.toLowerCase() });
-        const speciesData = (await this.$axios.get(this.pokemon.species.url)).data;
+        const speciesData = await this.$store.dispatch('pokemons/getFromUrl', { url: this.pokemon.species.url });
         this.species = { evolution_chain: speciesData.evolution_chain, habitat: speciesData.habitat, shape: speciesData.shape };
-        this.evolution_chain = (await this.$axios.get(this.species.evolution_chain.url)).data.chain;
+        this.evolution_chain = (await this.$store.dispatch('pokemons/getFromUrl', { url: this.species.evolution_chain.url })).chain;
+
+        console.log(JSON.stringify(this.evolution_chain));
     },
     data() {
         return {

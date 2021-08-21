@@ -32,7 +32,7 @@ export default {
     },
     async mounted() {
         // todo: handle errors
-        const species = (await this.$axios.get(this.evolutionChain.species.url)).data;
+        const species = await this.$store.dispatch('pokemons/getFromUrl', { url: this.evolutionChain.species.url });
 
         this.pokemonsVarieties = await this.$store.dispatch("pokemons/getDetailledPokemons", {
             results: species.varieties.map(_ => { return { url: _.pokemon.url } })
@@ -48,7 +48,7 @@ export default {
     align-items: center;
     flex-direction: column;
 
-    @media (min-width: 992px) {
+    @media (min-width: $media-width-min-md) {
         padding-top: 5rem;
     }
 }
@@ -69,7 +69,7 @@ ul {
     margin: 1rem;
     flex-wrap: wrap;
 
-    @media (max-width: 991px) {
+    @media (max-width: $media-width-max-sm) {
         flex-direction: column;
         width: 100%;
     }
@@ -91,7 +91,7 @@ ul {
     position: relative;
     margin-top: 14rem;
 
-    @media (max-width: 991px) {
+    @media (max-width: $media-width-max-sm) {
         flex-direction: column;
         width: 100%;
         margin-top: 5rem;
@@ -107,7 +107,7 @@ ul {
         transform: translateX(-50%);
         background-color: $background-color;
 
-        @media (max-width: 991px) {
+        @media (max-width: $media-width-max-sm) {
             top: -5rem;
             height: 5rem;
         }

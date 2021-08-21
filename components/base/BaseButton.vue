@@ -29,7 +29,10 @@ export default {
         },
         type: {
             type: String,
-            default: "button"
+            default: "button",
+            validator: function (value) {
+                return ['button', 'submit'].indexOf(value) !== -1
+            }
         },
     },
     methods: {
@@ -61,6 +64,10 @@ button {
         transform: translate(-50%, -50%);
     }
 
+    &:disabled {
+        cursor: default;
+    }
+
     &.primary,
     &.secondary {
         border-radius: 1rem;
@@ -71,10 +78,8 @@ button {
         justify-content: center;
         border: solid 2px transparent;
 
-        :disabled {
-            background-color: #eeeeee;
-            color: $black;
-            cursor: not-allowed;
+        &:disabled {
+            filter: grayscale(0.5);
         }
 
         &:hover,
@@ -87,8 +92,8 @@ button {
         background-color: $primary-color;
         color: $white;
 
-        &:hover,
-        &:focus {
+        &:hover:not(:disabled),
+        &:focus:not(:disabled) {
             border-color: $dark-primary-color;
         }
     }
@@ -96,9 +101,13 @@ button {
     &.secondary {
         background-color: $background-color;
 
-        &:hover,
-        &:focus {
+        &:hover:not(:disabled),
+        &:focus:not(:disabled) {
             border-color: $primary-color;
+        }
+
+        &:disabled {
+            background-color: rgba(0, 0, 0, 0.1);
         }
     }
 }

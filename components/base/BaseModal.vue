@@ -80,7 +80,7 @@ export default {
             display: flex;
             justify-content: space-between;
 
-            @media (max-width: 991px) {
+            @media (max-width: $media-width-max-sm) {
                 flex-direction: column;
 
                 button:not(:last-child) {

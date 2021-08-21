@@ -105,7 +105,7 @@ export default {
     list-style: none;
     padding: 0;
 
-    @media (max-width: 991px) {
+    @media (max-width: $media-width-max-sm) {
         li {
             width: 100%;
         }
@@ -114,7 +114,7 @@ export default {
     ::v-deep .pokemon-card-link {
         margin: 5rem 2rem 3rem;
 
-        @media (max-width: 991px) {
+        @media (max-width: $media-width-max-sm) {
             margin: 1rem 0;
             width: 100%;
         }

@@ -34,6 +34,7 @@ export default {
                 }
             } catch (e) {
                 this.isSearching = false;
+                console.log(e);
                 this.$emit('error', e);
             }
         },

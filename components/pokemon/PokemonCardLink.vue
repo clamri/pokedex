@@ -55,12 +55,12 @@ export default {
 
         @extend %background-color-type-medium-opacity;
 
-        @media (min-width: 992px) {
+        @media (min-width: $media-width-min-md) {
             padding: 4rem 2rem 7rem;
             min-width: 28rem;
         }
 
-        @media (max-width: 991px) {
+        @media (max-width: $media-width-max-sm) {
             display: flex;
             padding: 1rem;
             width: 100%;
@@ -70,7 +70,7 @@ export default {
             object-fit: contain;
             transition: all 0.5s;
 
-            @media (min-width: 992px) {
+            @media (min-width: $media-width-min-md) {
                 height: 8rem;
                 width: 8rem;
                 position: absolute;
@@ -80,7 +80,7 @@ export default {
                 transform-origin: bottom center;
             }
 
-            @media (max-width: 991px) {
+            @media (max-width: $media-width-max-sm) {
                 height: 7rem;
                 width: 7rem;
                 margin-right: 1rem;
@@ -93,7 +93,7 @@ export default {
             text-align: center;
             color: $white;
 
-            @media (max-width: 991px) {
+            @media (max-width: $media-width-max-sm) {
                 position: absolute;
                 bottom: 0;
                 right: 1rem;
@@ -108,7 +108,7 @@ export default {
             color: $white;
             font-size: 2.5rem;
 
-            @media (min-width: 992px) {
+            @media (min-width: $media-width-min-md) {
                 text-align: center;
             }
         }
@@ -117,11 +117,11 @@ export default {
             margin-top: 2rem;
             position: relative;
 
-            @media (min-width: 992px) {
+            @media (min-width: $media-width-min-md) {
                 text-align: center;
             }
 
-            @media (max-width: 991px) {
+            @media (max-width: $media-width-max-sm) {
                 margin-top: 0rem;
             }
 
@@ -136,7 +136,7 @@ export default {
 
                 @extend %background-color-type;
 
-                @media (max-width: 991px) {
+                @media (max-width: $media-width-max-sm) {
                     font-size: 1rem;
                 }
             }
@@ -157,7 +157,7 @@ export default {
         left: 50%;
         transform: translateX(-50%);
 
-        @media (max-width: 991px) {
+        @media (max-width: $media-width-max-sm) {
             display: none;
         }
     }

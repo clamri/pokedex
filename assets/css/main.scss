@@ -3,7 +3,7 @@ main {
     padding: 2rem 5rem;
     min-height: calc(100vh - #{$header-height});
 
-    @media (max-width: 992px) {
+    @media (max-width: $media-width-min-md) {
         padding: 2rem;
     }
 }

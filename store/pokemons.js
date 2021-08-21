@@ -40,7 +40,7 @@ export const actions = {
     async getMore({ commit, state, dispatch }) {
         if (state.loaded && state.next) {
             commit('setLoading');
-            const data = (await this.$axios.get(state.next))?.data;
+            const data = await this.$PokemonService.getFromUrl(state.next);
 
             const pokemons = await dispatch('getDetailledPokemons', data);
             commit('concatList', { ...data, pokemons });
@@ -55,9 +55,12 @@ export const actions = {
             return getUsefulInformations({ pokemon });
         }
     },
+    async getFromUrl({ }, { url }) {
+        return await this.$PokemonService.getFromUrl(url);
+    },
 
     async getDetailledPokemons({ }, { results }) {
-        const promisesArray = results.map(async result => (await this.$axios.get(result.url)).data);
+        const promisesArray = results.map(async result => await this.$PokemonService.getFromUrl(result.url));
         return (await Promise.all(promisesArray))
             .filter(pokemon => pokemon.order !== -1 && pokemon.sprites?.other['official-artwork']?.front_default)
             .map(pokemon => getUsefulInformations({ pokemon }));

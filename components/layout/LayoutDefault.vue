@@ -6,6 +6,8 @@
             <team-section />
 
             <slot name="content" />
+
+            <app-button-scroll-top />
         </main>
     </div>
 </template>

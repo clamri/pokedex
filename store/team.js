@@ -21,16 +21,22 @@ export const actions = {
     async initTeam({ commit }, { pokemons }) {
         commit('setList', { pokemons });
     },
-    async addOne({ commit, state }, { pokemon }) {
+    async addOne({ commit, state, dispatch }, { pokemon }) {
         commit('addToList', { pokemon });
         localStorage.setItem('team', JSON.stringify(state.list));
+        dispatch('shared/showSnackbar', "Pokémon ajouté à l'équipe !", {
+            root: true
+        });
     },
     async updateOne({ commit, state }, { index, pokemon }) {
         commit('updateFromList', { index, pokemon });
         localStorage.setItem('team', JSON.stringify(state.list));
     },
-    async removeOne({ commit, state }, { index }) {
+    async removeOne({ commit, state, dispatch }, { index }) {
         commit('removeFromList', { index });
         localStorage.setItem('team', JSON.stringify(state.list));
+        dispatch('shared/showSnackbar', "Pokémon enlevé de l'équipe !", {
+            root: true
+        });
     },
 };

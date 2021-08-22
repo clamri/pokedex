@@ -8,6 +8,7 @@
             <slot name="content" />
 
             <app-button-scroll-top />
+            <base-snackbar />
         </main>
     </div>
 </template>

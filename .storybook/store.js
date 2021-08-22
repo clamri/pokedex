@@ -18,6 +18,14 @@ const store = new Vuex.Store({
             mutations: require("../store/pokemons.js").mutations
         },
 
+        shared: {
+            namespaced: true,
+            state: require("../store/shared.js").state,
+            getters: require("../store/shared.js").getters,
+            actions: require("../store/shared.js").actions,
+            mutations: require("../store/shared.js").mutations
+        },
+
         team: {
             namespaced: true,
             state: require("../store/team.js").state,

@@ -5,6 +5,7 @@ import store from '@/.storybook/store';
 export default {
   title: 'Pokemon/PokemonEvolutions',
   component: PokemonEvolutions,
+  decorators: [() => ({ template: '<div style="margin-top: 5rem;"><story/></div>' })],
 };
 
 const Template = (args, { argTypes }) => ({

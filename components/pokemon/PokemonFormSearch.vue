@@ -40,7 +40,7 @@ export default {
         },
         resetForm() {
             this.searchValue = null;
-        }
+        },
     }
 }
 </script>

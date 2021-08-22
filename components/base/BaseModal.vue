@@ -23,14 +23,14 @@ export default {
             type: String,
             required: true,
         },
-        closable: {
+        isClosable: {
             type: Boolean,
             default: true,
         },
     },
     methods: {
         closeOnClickOutside(event) {
-            if (event.target.id === this.name) {
+            if (this.isClosable && event.target.id === this.name) {
                 this.$emit('close');
             }
         },

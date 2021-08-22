@@ -5,6 +5,7 @@ import store from '@/.storybook/store';
 export default {
   title: 'Pokemon/PokemonCardLink',
   component: PokemonCardLink,
+  decorators: [() => ({ template: '<div style="margin-top: 5rem;"><story/></div>' })],
   argTypes: { onClick: { action: 'clicked' } },
 };
 

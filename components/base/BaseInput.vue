@@ -1,6 +1,6 @@
 <template>
     <div class="field">
-        <label :for="name">{{ label }}</label>
+        <label :for="name">{{ label }} {{ $attrs.required ? '(obligatoire)' : '' }}</label>
 
         <input v-bind="$attrs"
                :id="name"
@@ -11,9 +11,9 @@
                @input="$emit('input', $event.target.value)"
                @click="$emit('click')"
                @keyup="$emit('keyup', $event)"
-               @keydown.tab="$emit('keydowntab')"
-               @blur="$emit('blur')"
-               @keyup.enter="enter()" />
+               @keyup.tab="$emit('tab')"
+               @keyup.enter="$emit('enter')"
+               @blur="$emit('blur')" />
     </div>
 </template>
 
@@ -40,11 +40,6 @@ export default {
             type: String
         },
     },
-    methods: {
-        enter() {
-            this.$emit("enter");
-        }
-    }
 };
 </script>
 
@@ -73,6 +68,11 @@ export default {
 
         &:focus {
             outline: none;
+        }
+
+        &:read-only {
+            background-color: rgba(0, 0, 0, 0.05);
+            color: rgb(84, 84, 84);
         }
     }
 

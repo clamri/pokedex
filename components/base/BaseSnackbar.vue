@@ -14,12 +14,15 @@ export default {
         }
     },
     watch: {
-        isVisible(newVal) {
-            if (newVal) {
-                setTimeout(() => {
-                    this.$store.dispatch("shared/hideSnackbar");
-                }, 3000);
-            }
+        isVisible: {
+            handler(newVal) {
+                if (newVal) {
+                    setTimeout(() => {
+                        this.$store.dispatch("shared/hideSnackbar");
+                    }, 3000);
+                }
+            },
+            immediate: true
         }
     }
 };

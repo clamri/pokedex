@@ -1,6 +1,7 @@
 <template>
     <layout-default>
-        <section slot="content">
+        <section class="container"
+                 slot="content">
             <template v-if="$fetchState.error">
                 <p>{{ $t('app.errorLabel') }}</p>
             </template>

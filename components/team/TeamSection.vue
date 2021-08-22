@@ -1,5 +1,5 @@
 <template>
-    <section class="team-section">
+    <section class="team-section container">
         <h2 class="team-title">{{ $t('team.section.titleLabel') }}</h2>
 
         <client-only>

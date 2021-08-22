@@ -1,6 +1,7 @@
 <template>
     <layout-default>
-        <section slot="content">
+        <section class="container"
+                 slot="content">
             <pokemon-form-search ref="form-search"
                                  @found="showPokemon($event)"
                                  @error="showError($event)" />

@@ -1,0 +1,889 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Base/BaseButton Default 1`] = `
+<button
+  class=""
+  type="button"
+>
+  <span
+    class="label"
+  >
+    Mon bouton
+  </span>
+   
+  <!---->
+</button>
+`;
+
+exports[`Storyshots Base/BaseButton Info 1`] = `
+<button
+  class="button button--info uppercase button--medium"
+  type="button"
+>
+  <span
+    class="label"
+  >
+    Mon bouton
+  </span>
+   
+  <!---->
+</button>
+`;
+
+exports[`Storyshots Base/BaseButton Info Disabled 1`] = `
+<button
+  class="button button--info uppercase button--medium"
+  disabled="disabled"
+  type="button"
+>
+  <span
+    class="label"
+  >
+    Mon bouton
+  </span>
+   
+  <!---->
+</button>
+`;
+
+exports[`Storyshots Base/BaseButton Info Loading 1`] = `
+<button
+  class="button button--info uppercase button--medium button--loading"
+  disabled="disabled"
+  type="button"
+>
+  <span
+    class="label"
+  >
+    Mon bouton
+  </span>
+   
+  <span
+    aria-label="base.loader.ariaLabel"
+    class="loader"
+  >
+    <span
+      class="loader__dot"
+      style="background-color: rgb(246, 248, 252);"
+    />
+    <span
+      class="loader__dot"
+      style="background-color: rgb(246, 248, 252);"
+    />
+    <span
+      class="loader__dot"
+      style="background-color: rgb(246, 248, 252);"
+    />
+    <span
+      class="loader__dot"
+      style="background-color: rgb(246, 248, 252);"
+    />
+  </span>
+</button>
+`;
+
+exports[`Storyshots Base/BaseButton Primary 1`] = `
+<button
+  class="button button--primary uppercase button--medium"
+  type="button"
+>
+  <span
+    class="label"
+  >
+    Mon bouton
+  </span>
+   
+  <!---->
+</button>
+`;
+
+exports[`Storyshots Base/BaseButton Primary Disabled 1`] = `
+<button
+  class="button button--primary uppercase button--medium"
+  disabled="disabled"
+  type="button"
+>
+  <span
+    class="label"
+  >
+    Mon bouton
+  </span>
+   
+  <!---->
+</button>
+`;
+
+exports[`Storyshots Base/BaseButton Primary Loading 1`] = `
+<button
+  class="button button--primary uppercase button--medium button--loading"
+  disabled="disabled"
+  type="button"
+>
+  <span
+    class="label"
+  >
+    Mon bouton
+  </span>
+   
+  <span
+    aria-label="base.loader.ariaLabel"
+    class="loader"
+  >
+    <span
+      class="loader__dot"
+      style="background-color: rgb(255, 255, 255);"
+    />
+    <span
+      class="loader__dot"
+      style="background-color: rgb(255, 255, 255);"
+    />
+    <span
+      class="loader__dot"
+      style="background-color: rgb(255, 255, 255);"
+    />
+    <span
+      class="loader__dot"
+      style="background-color: rgb(255, 255, 255);"
+    />
+  </span>
+</button>
+`;
+
+exports[`Storyshots Base/BaseButton Primary Small 1`] = `
+<button
+  class="button button--primary uppercase button--small"
+  type="button"
+>
+  <span
+    class="label"
+  >
+    Mon bouton
+  </span>
+   
+  <!---->
+</button>
+`;
+
+exports[`Storyshots Base/BaseButton Secondary 1`] = `
+<button
+  class="button button--secondary uppercase button--medium"
+  type="button"
+>
+  <span
+    class="label"
+  >
+    Mon bouton
+  </span>
+   
+  <!---->
+</button>
+`;
+
+exports[`Storyshots Base/BaseButton Secondary Disabled 1`] = `
+<button
+  class="button button--secondary uppercase button--medium"
+  disabled="disabled"
+  type="button"
+>
+  <span
+    class="label"
+  >
+    Mon bouton
+  </span>
+   
+  <!---->
+</button>
+`;
+
+exports[`Storyshots Base/BaseButton Secondary Loading 1`] = `
+<button
+  class="button button--secondary uppercase button--medium button--loading"
+  disabled="disabled"
+  type="button"
+>
+  <span
+    class="label"
+  >
+    Mon bouton
+  </span>
+   
+  <span
+    aria-label="base.loader.ariaLabel"
+    class="loader"
+  >
+    <span
+      class="loader__dot"
+      style="background-color: rgb(255, 255, 255);"
+    />
+    <span
+      class="loader__dot"
+      style="background-color: rgb(255, 255, 255);"
+    />
+    <span
+      class="loader__dot"
+      style="background-color: rgb(255, 255, 255);"
+    />
+    <span
+      class="loader__dot"
+      style="background-color: rgb(255, 255, 255);"
+    />
+  </span>
+</button>
+`;
+
+exports[`Storyshots Base/BaseInput Default 1`] = `
+<div
+  class="field"
+>
+  <label
+    for="input"
+  >
+    Mon labelbase.input.requiredLabel
+  </label>
+   
+  <input
+    aria-label="Mon label"
+    id="input"
+    placeholder="Mon placeholder"
+    type="text"
+  />
+</div>
+`;
+
+exports[`Storyshots Base/BaseInput Default Disabled 1`] = `
+<div
+  class="field"
+>
+  <label
+    for="input"
+  >
+    Mon labelbase.input.requiredLabel
+  </label>
+   
+  <input
+    aria-label="Mon label"
+    disabled="disabled"
+    id="input"
+    placeholder="Mon placeholder"
+    type="text"
+  />
+</div>
+`;
+
+exports[`Storyshots Base/BaseInput Default Readonly 1`] = `
+<div
+  class="field"
+>
+  <label
+    for="input"
+  >
+    Mon labelbase.input.requiredLabel
+  </label>
+   
+  <input
+    aria-label="Mon label"
+    id="input"
+    placeholder="Mon placeholder"
+    readonly="readonly"
+    type="text"
+  />
+</div>
+`;
+
+exports[`Storyshots Base/BaseInput Default Required 1`] = `
+<div
+  class="field"
+>
+  <label
+    for="input"
+  >
+    Mon labelbase.input.requiredLabel
+  </label>
+   
+  <input
+    aria-label="Mon label"
+    id="input"
+    placeholder="Mon placeholder"
+    required="required"
+    type="text"
+  />
+</div>
+`;
+
+exports[`Storyshots Base/BaseLinkHoveredUnderline Default 1`] = `
+<a
+  href="#"
+>
+  <span>
+    Lien
+  </span>
+</a>
+`;
+
+exports[`Storyshots Base/BaseLoader Default 1`] = `
+<span
+  aria-label="base.loader.ariaLabel"
+  class="loader"
+>
+  <span
+    class="loader__dot"
+    style="background-color: rgb(255, 255, 255);"
+  />
+  <span
+    class="loader__dot"
+    style="background-color: rgb(255, 255, 255);"
+  />
+  <span
+    class="loader__dot"
+    style="background-color: rgb(255, 255, 255);"
+  />
+  <span
+    class="loader__dot"
+    style="background-color: rgb(255, 255, 255);"
+  />
+</span>
+`;
+
+exports[`Storyshots Base/BaseModal Default 1`] = `
+<div
+  class="modal-container"
+  id="default"
+>
+  <div
+    class="modal"
+  >
+    <div
+      class="modal-header"
+    >
+      <h1>
+        Mon header
+      </h1>
+    </div>
+     
+    <div
+      class="modal-body"
+    >
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+    </div>
+     
+    <div
+      class="modal-footer"
+    >
+      <button
+        class="button button--secondary uppercase button--medium"
+        type="button"
+      >
+        <span
+          class="label"
+        >
+          Fermer
+        </span>
+         
+        <!---->
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Base/BaseModal Default Not Closable 1`] = `
+<div
+  class="modal-container"
+  id="notClosable"
+>
+  <div
+    class="modal"
+  >
+    <div
+      class="modal-header"
+    >
+      <h1>
+        Mon header
+      </h1>
+    </div>
+     
+    <div
+      class="modal-body"
+    >
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+    </div>
+     
+    <div
+      class="modal-footer"
+    >
+      <button
+        class="button button--secondary uppercase button--medium"
+        type="button"
+      >
+        <span
+          class="label"
+        >
+          Fermer
+        </span>
+         
+        <!---->
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Base/BasePokeball Default 1`] = `
+<div
+  class="pokeball"
+/>
+`;
+
+exports[`Storyshots Pokemon/PokemonCardButton Pikachu 1`] = `
+<button
+  class="pokemon-card-button hovered-border background-color-electric-medium-opacity border-color-electric"
+  type="button"
+>
+  <img
+    alt=""
+    class="pokemon-sprite"
+    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
+  />
+   
+  <div
+    class="pokemon-name capitalize"
+  >
+    pikachu
+  </div>
+</button>
+`;
+
+exports[`Storyshots Pokemon/PokemonCardButton Pikachu Disabled 1`] = `
+<button
+  class="pokemon-card-button hovered-border background-color-electric-medium-opacity border-color-electric"
+  disabled="disabled"
+  type="button"
+>
+  <img
+    alt=""
+    class="pokemon-sprite"
+    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
+  />
+   
+  <div
+    class="pokemon-name capitalize"
+  >
+    pikachu
+  </div>
+</button>
+`;
+
+exports[`Storyshots Pokemon/PokemonCardLink Bulbasaur 1`] = `
+<div
+  style="margin-top: 5rem;"
+>
+  <div>
+    <div
+      class="pokemon-card-link"
+    >
+      <a
+        class="pokemon-link hovered-border background-color-grass-medium-opacity border-color-grass"
+        href="#"
+      >
+        <img
+          alt=""
+          class="pokemon-sprite"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
+        />
+         
+        <div
+          class="pokemon-informations"
+        >
+          <div
+            class="pokemon-id uppercase"
+          >
+            #001
+            
+          </div>
+           
+          <div
+            class="pokemon-name capitalize"
+          >
+            bulbasaur
+          </div>
+           
+          <div
+            class="pokemon-types"
+          >
+            <span
+              class="pokemon-type uppercase background-color-grass"
+            >
+              grass
+            </span>
+            <span
+              class="pokemon-type uppercase background-color-poison"
+            >
+              poison
+            </span>
+          </div>
+        </div>
+      </a>
+       
+      <button
+        class="pokemon-to-team-button hovered-border button button--info uppercase button--small border-color-grass"
+        type="button"
+      >
+        <span
+          class="label"
+        >
+          team.buttonAddPokemon.label
+        </span>
+         
+        <!---->
+      </button>
+    </div>
+    <div
+      class="snackbar"
+    >
+      
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pokemon/PokemonEvolutions Burmy 1`] = `
+<div
+  style="margin-top: 5rem;"
+>
+  <div>
+    <div
+      class="pokemons-evolutions"
+    >
+      <ul
+        class="pokemon-varietes"
+      />
+       
+      <ul
+        class="pokemon-evolutions-list"
+      >
+        <li>
+          <div
+            class="pokemons-evolutions"
+          >
+            <ul
+              class="pokemon-varietes"
+            />
+             
+            <!---->
+          </div>
+        </li>
+        <li>
+          <div
+            class="pokemons-evolutions"
+          >
+            <ul
+              class="pokemon-varietes"
+            />
+             
+            <!---->
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="snackbar"
+    >
+      
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pokemon/PokemonEvolutions Charmander 1`] = `
+<div
+  style="margin-top: 5rem;"
+>
+  <div>
+    <div
+      class="pokemons-evolutions"
+    >
+      <ul
+        class="pokemon-varietes"
+      />
+       
+      <ul
+        class="pokemon-evolutions-list"
+      >
+        <li>
+          <div
+            class="pokemons-evolutions"
+          >
+            <ul
+              class="pokemon-varietes"
+            />
+             
+            <ul
+              class="pokemon-evolutions-list"
+            >
+              <li>
+                <div
+                  class="pokemons-evolutions"
+                >
+                  <ul
+                    class="pokemon-varietes"
+                  />
+                   
+                  <!---->
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="snackbar"
+    >
+      
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pokemon/PokemonEvolutions Eevee 1`] = `
+<div
+  style="margin-top: 5rem;"
+>
+  <div>
+    <div
+      class="pokemons-evolutions"
+    >
+      <ul
+        class="pokemon-varietes"
+      />
+       
+      <ul
+        class="pokemon-evolutions-list"
+      >
+        <li>
+          <div
+            class="pokemons-evolutions"
+          >
+            <ul
+              class="pokemon-varietes"
+            />
+             
+            <!---->
+          </div>
+        </li>
+        <li>
+          <div
+            class="pokemons-evolutions"
+          >
+            <ul
+              class="pokemon-varietes"
+            />
+             
+            <!---->
+          </div>
+        </li>
+        <li>
+          <div
+            class="pokemons-evolutions"
+          >
+            <ul
+              class="pokemon-varietes"
+            />
+             
+            <!---->
+          </div>
+        </li>
+        <li>
+          <div
+            class="pokemons-evolutions"
+          >
+            <ul
+              class="pokemon-varietes"
+            />
+             
+            <!---->
+          </div>
+        </li>
+        <li>
+          <div
+            class="pokemons-evolutions"
+          >
+            <ul
+              class="pokemon-varietes"
+            />
+             
+            <!---->
+          </div>
+        </li>
+        <li>
+          <div
+            class="pokemons-evolutions"
+          >
+            <ul
+              class="pokemon-varietes"
+            />
+             
+            <!---->
+          </div>
+        </li>
+        <li>
+          <div
+            class="pokemons-evolutions"
+          >
+            <ul
+              class="pokemon-varietes"
+            />
+             
+            <!---->
+          </div>
+        </li>
+        <li>
+          <div
+            class="pokemons-evolutions"
+          >
+            <ul
+              class="pokemon-varietes"
+            />
+             
+            <!---->
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="snackbar"
+    >
+      
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pokemon/PokemonEvolutions Oddish 1`] = `
+<div
+  style="margin-top: 5rem;"
+>
+  <div>
+    <div
+      class="pokemons-evolutions"
+    >
+      <ul
+        class="pokemon-varietes"
+      />
+       
+      <ul
+        class="pokemon-evolutions-list"
+      >
+        <li>
+          <div
+            class="pokemons-evolutions"
+          >
+            <ul
+              class="pokemon-varietes"
+            />
+             
+            <ul
+              class="pokemon-evolutions-list"
+            >
+              <li>
+                <div
+                  class="pokemons-evolutions"
+                >
+                  <ul
+                    class="pokemon-varietes"
+                  />
+                   
+                  <!---->
+                </div>
+              </li>
+              <li>
+                <div
+                  class="pokemons-evolutions"
+                >
+                  <ul
+                    class="pokemon-varietes"
+                  />
+                   
+                  <!---->
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="snackbar"
+    >
+      
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pokemon/PokemonFormSearch Default 1`] = `
+<form
+  id="searchForm"
+>
+  <div
+    class="field"
+  >
+    <label
+      for="search"
+    >
+      pokemon.formSearch.searchInputLabelbase.input.requiredLabel
+    </label>
+     
+    <input
+      aria-label="pokemon.formSearch.searchInputLabel"
+      id="search"
+      placeholder="pokemon.formSearch.searchInputPlaceholder"
+      required="required"
+      type="text"
+    />
+  </div>
+   
+  <button
+    class="button button--primary uppercase button--small"
+    type="submit"
+  >
+    <span
+      class="label"
+    >
+      pokemon.formSearch.submitButtonLabel
+    </span>
+     
+    <!---->
+  </button>
+</form>
+`;
+
+exports[`Storyshots Pokemon/TeamSection Default 1`] = `
+<section
+  class="team-section"
+>
+  <h2
+    class="team-title"
+  >
+    team.section.titleLabel
+  </h2>
+   
+  <div>
+    <p
+      class="information"
+    >
+      team.section.teamEmpty
+    </p>
+     
+    <ul
+      class="pokemon-list"
+    />
+  </div>
+   
+  <!---->
+</section>
+`;

@@ -24,6 +24,7 @@
     "@storybook/addon-actions": "^6.3.7",
     "@storybook/addon-essentials": "^6.3.7",
     "@storybook/addon-links": "^6.3.7",
+    "@storybook/addon-storyshots": "^6.3.7",
     "@storybook/vue": "^6.3.7",
     "@vue/test-utils": "^1.2.2",
     "babel-jest": "^27.0.6",

@@ -1,7 +1,7 @@
 module.exports = {
     app: {
         header: {
-            titleLabel: "Pokédex"
+            titleLabel: "Pokedex"
         },
         buttonScrollTop: {
             ariaLabel: "Back to top"

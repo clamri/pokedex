@@ -23,8 +23,8 @@ module.exports = {
     },
     pokemon: {
         formSearch: {
-            searchInputLabel: "Rechercher",
-            searchInputPlaceholder: "Rechercher",
+            searchInputLabel: "Nom",
+            searchInputPlaceholder: "Nom",
             submitButtonLabel: "Chercher"
         }
     },

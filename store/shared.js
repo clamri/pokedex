@@ -3,6 +3,9 @@ export const state = () => ({
         isVisible: false,
         label: null,
     },
+    helloModal: {
+        isVisible: false
+    }
 });
 
 export const mutations = {
@@ -14,6 +17,12 @@ export const mutations = {
         state.snackbar.isVisible = false;
         state.snackbar.label = null;
     },
+    showHelloModal(state) {
+        state.helloModal.isVisible = true;
+    },
+    hideHelloModal(state) {
+        state.helloModal.isVisible = false;
+    },
 };
 
 export const actions = {
@@ -22,5 +31,11 @@ export const actions = {
     },
     hideSnackbar({ commit }) {
         commit('hideSnackbar');
+    },
+    showHelloModal({ commit }) {
+        commit('showHelloModal');
+    },
+    hideHelloModal({ commit }) {
+        commit('hideHelloModal');
     },
 };

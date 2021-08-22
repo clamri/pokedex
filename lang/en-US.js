@@ -6,6 +6,11 @@ module.exports = {
         buttonScrollTop: {
             ariaLabel: "Back to top"
         },
+        modalHello: {
+            titleLabel: "Welcome!",
+            contentLabel: "I hope you enjoy using this web app.",
+            closeButtonLabel: "Close",
+        },
         errorLabel: "An error occurred, please try again later",
         loadingLabel: "Loading",
         errorPage: {

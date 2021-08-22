@@ -1,0 +1,63 @@
+module.exports = {
+    app: {
+        header: {
+            titleLabel: "Pokédex EN"
+        },
+        buttonScrollTop: {
+            ariaLabel: "Back to top"
+        },
+        errorLabel: "An error occurred, please try again later",
+        loadingLabel: "Loading"
+    },
+    base: {
+        input: {
+            requiredLabel: " (required)"
+        },
+        loader: {
+            ariaLabel: "Loading"
+        }
+    },
+    pokemon: {
+        formSearch: {
+            searchInputLabel: "Name",
+            searchInputPlaceholder: "Name",
+            submitButtonLabel: "Search"
+        }
+    },
+    team: {
+        buttonAddPokemon: {
+            label: "Add to my team"
+        },
+        formSurname: {
+            nameInputLabel: "Surname",
+            nameInputPlaceholder: "Surname",
+            submitButtonLabel: "Rename"
+        },
+        modalPokemon: {
+            titleLabel: "What to do with <span class='capitalize'>{pokemonName}</span>?",
+            removeFromTeamButtonLabel: "Remove from my team",
+            closeModalButtonLabel: "Close"
+        },
+        section: {
+            titleLabel: "My team",
+            teamEmpty: "No pokemon added to the team yet!",
+        }
+    },
+    pokemonPage: {
+        evolutionsSection: {
+            titleLabel: "Evolutions"
+        }
+    },
+    indexPage: {
+        searchSection: {
+            noneFoundLabel: "No pokemon found with this name!",
+            seeAllButtonLabel: "See all pokemons"
+        }
+    },
+    store: {
+        team: {
+            pokemonAddedToTeamSnackbarLabel: "Pokemon added to the team",
+            pokemonRemovedFromTeamSnackbarLabel: "Pokemon removed from the team",
+        }
+    }
+}

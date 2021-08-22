@@ -1,6 +1,7 @@
 import PokemonEvolutions from './PokemonEvolutions.vue';
 
 import store from '@/.storybook/store';
+import i18n from '@/.storybook/i18n';
 
 export default {
   title: 'Pokemon/PokemonEvolutions',
@@ -11,8 +12,9 @@ export default {
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { PokemonEvolutions },
-  template: '<pokemon-evolutions v-bind="$props" />',
+  template: '<div><pokemon-evolutions v-bind="$props" /><base-snackbar /></div>',
   store: store,
+  i18n: i18n
 });
 
 export const Eevee = Template.bind({});

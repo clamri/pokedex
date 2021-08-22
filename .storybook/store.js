@@ -1,12 +1,11 @@
-import Vue from "vue";
 import Vuex from "vuex";
 
 import axios from "axios";
+import i18n from '@/.storybook/i18n';
+
 import PokemonService from "../services/pokemon.service";
 
 PokemonService.$axios = axios;
-
-Vue.use(Vuex);
 
 const store = new Vuex.Store({
     modules: {
@@ -36,6 +35,7 @@ const store = new Vuex.Store({
     }
 });
 
+store.$i18n = i18n;
 store.$axios = axios;
 store.$PokemonService = PokemonService;
 

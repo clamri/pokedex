@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import VueI18n from 'vue-i18n';
 
 import { action } from '@storybook/addon-actions';
 
@@ -8,6 +9,7 @@ import BaseInput from '../components/base/BaseInput.vue';
 import BaseLinkHoveredUnderline from '../components/base/BaseLinkHoveredUnderline.vue';
 import BaseLoader from '../components/base/BaseLoader.vue';
 import BaseModal from '../components/base/BaseModal.vue';
+import BaseSnackbar from '../components/base/BaseSnackbar.vue';
 import PokemonCardButton from '../components/pokemon/PokemonCardButton.vue';
 import PokemonCardLink from '../components/pokemon/PokemonCardLink.vue';
 import PokemonEvolutions from '../components/pokemon/PokemonEvolutions.vue';
@@ -18,12 +20,14 @@ import TeamModalPokemon from '../components/team/TeamModalPokemon.vue';
 import TeamSection from '../components/team/TeamSection.vue';
 
 Vue.use(Vuex);
+Vue.use(VueI18n);
 
 Vue.component('base-button', BaseButton);
 Vue.component('base-input', BaseInput);
 Vue.component('base-link-hovered-underline', BaseLinkHoveredUnderline);
 Vue.component('base-loader', BaseLoader);
 Vue.component('base-modal', BaseModal);
+Vue.component('base-snackbar', BaseSnackbar);
 Vue.component('pokemon-card-button', PokemonCardButton);
 Vue.component('pokemon-card-link', PokemonCardLink);
 Vue.component('pokemon-evolutions', PokemonEvolutions);
@@ -41,6 +45,10 @@ Vue.component('nuxt-link', {
         },
     },
     template: '<a href="#" @click.prevent="log()"><slot>NuxtLink</slot></a>',
+});
+
+Vue.component('client-only', {
+    template: '<div><slot>ClientOnly</slot></div>',
 });
 
 export const parameters = {

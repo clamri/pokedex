@@ -6,11 +6,11 @@
                                  @error="showError($event)" />
 
             <template v-if="$fetchState.error">
-                <p>Une erreur est survenue</p>
+                <p>{{ $t('app.errorLabel') }}</p>
             </template>
 
             <template v-else-if="$fetchState.pending ">
-                <p>Chargement en cours</p>
+                <p>{{ $t('app.loadingLabel') }}</p>
             </template>
 
             <template v-else>
@@ -18,9 +18,9 @@
                      class="pokemon-found">
                     <pokemon-card-link v-if="searchingPokemon"
                                        :pokemon="searchingPokemon" />
-                    <p v-else>Aucun pokémon de ce nom trouvé !</p>
+                    <p v-else>{{ $t('indexPage.searchSection.noneFoundLabel') }}</p>
 
-                    <base-button label="Voir tous les pokémons"
+                    <base-button :label="$t('indexPage.searchSection.seeAllButtonLabel')"
                                  class="show-all-button primary uppercase"
                                  @click="showAll()" />
                 </div>

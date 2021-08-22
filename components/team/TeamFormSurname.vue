@@ -4,12 +4,12 @@
           @submit.stop.prevent="updateSurname()">
 
         <base-input name="name"
-                    label="Surnom"
-                    placeholder="Surnom"
+                    :label="$t('team.formSurname.nameInputLabel')"
+                    :placeholder="$t('team.formSurname.nameInputPlaceholder')"
                     v-model="surnameValue"
                     required />
 
-        <base-button label="Renommer"
+        <base-button :label="$t('team.formSurname.submitButtonLabel')"
                      class="primary uppercase"
                      type="submit" />
     </form>

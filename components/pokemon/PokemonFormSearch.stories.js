@@ -1,6 +1,7 @@
 import PokemonFormSearch from './PokemonFormSearch.vue';
 
 import store from '@/.storybook/store';
+import i18n from '@/.storybook/i18n';
 
 export default {
   title: 'Pokemon/PokemonFormSearch',
@@ -13,6 +14,7 @@ const Template = (args, { argTypes }) => ({
   components: { PokemonFormSearch },
   template: '<pokemon-form-search @found="onFound" @error="onError" v-bind="$props" />',
   store: store,
+  i18n: i18n
 });
 
 export const Default = Template.bind({});

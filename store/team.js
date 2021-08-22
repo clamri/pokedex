@@ -24,7 +24,7 @@ export const actions = {
     async addOne({ commit, state, dispatch }, { pokemon }) {
         commit('addToList', { pokemon });
         localStorage.setItem('team', JSON.stringify(state.list));
-        dispatch('shared/showSnackbar', "Pokémon ajouté à l'équipe !", {
+        dispatch('shared/showSnackbar', this.$i18n.t('store.team.pokemonAddedToTeamSnackbarLabel'), {
             root: true
         });
     },
@@ -35,7 +35,7 @@ export const actions = {
     async removeOne({ commit, state, dispatch }, { index }) {
         commit('removeFromList', { index });
         localStorage.setItem('team', JSON.stringify(state.list));
-        dispatch('shared/showSnackbar', "Pokémon enlevé de l'équipe !", {
+        dispatch('shared/showSnackbar', this.$i18n.t('store.team.pokemonRemovedFromTeamSnackbarLabel'), {
             root: true
         });
     },

@@ -1,6 +1,7 @@
 import PokemonCardLink from './PokemonCardLink.vue';
 
 import store from '@/.storybook/store';
+import i18n from '@/.storybook/i18n';
 
 export default {
   title: 'Pokemon/PokemonCardLink',
@@ -12,8 +13,9 @@ export default {
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { PokemonCardLink },
-  template: '<pokemon-card-link v-bind="$props" />',
+  template: '<div><pokemon-card-link v-bind="$props" /><base-snackbar /></div>',
   store: store,
+  i18n: i18n,
 });
 
 export const Bulbasaur = Template.bind({});

@@ -3,7 +3,8 @@
                 class="team-modal-pokemon"
                 @close="closePokemonModal()">
         <template slot="header">
-            <h1>Que faire avec <span class="capitalize">{{ pokemon.surname ? pokemon.surname : pokemon.name }}</span> ?
+            <h1
+                v-html="$t('team.modalPokemon.titleLabel', { pokemonName: pokemon.surname ? pokemon.surname : pokemon.name })">
             </h1>
         </template>
         <template slot="body">
@@ -18,11 +19,11 @@
             <team-form-surname @update="updateSurname($event)" />
         </template>
         <template slot="footer">
-            <base-button label="Enlever de mon équipe"
+            <base-button :label="$t('team.modalPokemon.removeFromTeamButtonLabel')"
                          class="primary"
                          @click="removeFromTeam()" />
 
-            <base-button label="Fermer"
+            <base-button :label="$t('team.modalPokemon.closeModalButtonLabel')"
                          class="secondary"
                          @click="closePokemonModal()" />
         </template>

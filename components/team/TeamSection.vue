@@ -1,10 +1,10 @@
 <template>
     <section class="team-section">
-        <h2 class="team-title">Mon équipe</h2>
+        <h2 class="team-title">{{ $t('team.section.titleLabel') }}</h2>
 
         <client-only>
             <p v-if="team.length === 0"
-               class="information">Aucun pokémon ajouté à l'équipe pour le moment !</p>
+               class="information">{{ $t('team.section.teamEmpty') }}</p>
             <ul class="pokemon-list">
                 <li v-for="(pokemon, index) in team"
                     :key="index"

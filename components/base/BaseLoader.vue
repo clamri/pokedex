@@ -1,13 +1,10 @@
 <template>
-    <span class="loader">
-        <span class="loader__dot"
-              :style="{ backgroundColor: color }"></span>
-        <span class="loader__dot"
-              :style="{ backgroundColor: color }"></span>
-        <span class="loader__dot"
-              :style="{ backgroundColor: color }"></span>
-        <span class="loader__dot"
-              :style="{ backgroundColor: color }"></span>
+    <span :aria-label="$t('base.loader.ariaLabel')"
+          class="loader">
+        <span v-for="i in 4"
+              :key="i"
+              class="loader__dot"
+              :style="style"></span>
     </span>
 </template>
 
@@ -18,6 +15,13 @@ export default {
             type: String,
             default: "#fff"
         }
+    },
+    computed: {
+        style() {
+            return {
+                backgroundColor: this.color,
+            };
+        },
     }
 }
 </script>

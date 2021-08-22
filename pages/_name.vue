@@ -2,11 +2,11 @@
     <layout-default>
         <section slot="content">
             <template v-if="$fetchState.error">
-                <p>Une erreur est survenue</p>
+                <p>{{ $t('app.errorLabel') }}</p>
             </template>
 
             <template v-else-if="$fetchState.pending ">
-                <p>Chargement en cours</p>
+                <p>{{ $t('app.loadingLabel') }}</p>
             </template>
 
             <template v-else>
@@ -25,7 +25,7 @@
                     <!-- todo: display more information -->
 
                     <section class="more-informations">
-                        <h3 class="section-title uppercase">Évolutions</h3>
+                        <h3 class="section-title uppercase">{{ $t('pokemonPage.evolutionsSection.titleLabel') }}</h3>
                         <pokemon-evolutions :evolution-chain="evolution_chain" />
                     </section>
                 </article>
@@ -41,8 +41,6 @@ export default {
         const speciesData = await this.$store.dispatch('pokemons/getFromUrl', { url: this.pokemon.species.url });
         this.species = { evolution_chain: speciesData.evolution_chain, habitat: speciesData.habitat, shape: speciesData.shape };
         this.evolution_chain = (await this.$store.dispatch('pokemons/getFromUrl', { url: this.species.evolution_chain.url })).chain;
-
-        console.log(JSON.stringify(this.evolution_chain));
     },
     data() {
         return {

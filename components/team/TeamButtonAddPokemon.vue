@@ -1,5 +1,5 @@
 <template>
-    <base-button label="Ajouter à mon équipe"
+    <base-button :label="$t('team.buttonAddPokemon.label')"
                  class="pokemon-to-team-button uppercase hovered-border"
                  :class="[`border-color-${pokemon.defaultType}`]"
                  @click="addToTeam()" />

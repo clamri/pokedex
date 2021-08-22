@@ -2,7 +2,7 @@
     <button type="button"
             class="app-button-scroll-top"
             :class="{ 'is-visible': showBackToTopButton }"
-            aria-label="Retour en haut de la page"
+            :aria-label="$t('app.buttonScrollTop.ariaLabel')"
             @click="scroll()">
         <i class="icon-chevron-up"
            aria-hidden></i>

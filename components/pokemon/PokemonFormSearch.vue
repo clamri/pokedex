@@ -3,12 +3,12 @@
           @submit.stop.prevent="searchPokemon()">
 
         <base-input name="search"
-                    label="Rechercher"
-                    placeholder="Rechercher"
+                    :label="$t('pokemon.formSearch.searchInputLabel')"
+                    :placeholder="$t('pokemon.formSearch.searchInputPlaceholder')"
                     v-model="searchValue"
                     required />
 
-        <base-button label="Chercher"
+        <base-button :label="$t('pokemon.formSearch.submitButtonLabel')"
                      class="primary uppercase"
                      :isLoading="isSearching"
                      type="submit" />

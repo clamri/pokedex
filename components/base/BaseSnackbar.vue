@@ -4,6 +4,7 @@
 </template>
 
 <script>
+// todo: storybook stories
 export default {
     computed: {
         isVisible() {

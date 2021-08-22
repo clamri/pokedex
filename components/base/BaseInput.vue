@@ -1,6 +1,6 @@
 <template>
     <div class="field">
-        <label :for="name">{{ label }} {{ $attrs.required ? '(obligatoire)' : '' }}</label>
+        <label :for="name">{{ label }}{{ $attrs.required !== null ? `${$t('base.input.requiredLabel')}` : '' }}</label>
 
         <input v-bind="$attrs"
                :id="name"

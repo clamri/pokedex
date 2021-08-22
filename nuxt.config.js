@@ -40,6 +40,8 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    // https://i18n.nuxtjs.org/
+    '@nuxtjs/i18n'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -56,6 +58,29 @@ export default {
   styleResources: {
     scss: ['./assets/css/_var.scss', './assets/css/_colors.scss'],
     hoistUseStatements: true  // Hoists the "@use" imports
+  },
+
+  // i18n module configuration: https://i18n.nuxtjs.org/
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        iso: 'en-US',
+        name: 'English'
+      },
+      {
+        code: 'fr',
+        iso: 'fr-FR',
+        name: 'Français'
+      }],
+    defaultLocale: 'en',
+    vueI18n: {
+      fallbackLocale: 'en',
+      messages: {
+        en: require('./lang/en-US'),
+        fr: require('./lang/fr-FR'),
+      }
+    }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

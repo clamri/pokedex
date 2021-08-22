@@ -18,11 +18,13 @@ header {
     height: $header-height;
 
     h1 {
-        padding: 1.3rem 2rem;
         font-size: 2rem;
-        line-height: 2rem;
         margin-top: 1rem;
         z-index: 1;
+
+        a {
+            padding: 1.3rem 2rem;
+        }
     }
 }
 </style>

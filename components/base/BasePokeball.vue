@@ -16,7 +16,7 @@ $size: 30rem;
         content: "";
         display: block;
         width: $size;
-        height: ($size/14);
+        height: ($size/15);
         position: absolute;
         left: 50%;
         top: 50%;
@@ -27,15 +27,15 @@ $size: 30rem;
     &:after {
         content: "";
         display: block;
-        width: $size/5;
-        height: $size/5;
+        width: $size/3;
+        height: $size/3;
         background: $white;
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
         border-radius: 50%;
-        box-shadow: 0 0 0 ($size/14) $background-color;
+        border: ($size/15) solid $background-color;
     }
 }
 </style>

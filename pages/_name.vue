@@ -6,9 +6,7 @@
                 <p>{{ $t('app.errorLabel') }}</p>
             </template>
 
-            <template v-else-if="$fetchState.pending ">
-                <p>{{ $t('app.loadingLabel') }}</p>
-            </template>
+            <app-loader v-else-if="$fetchState.pending" />
 
             <template v-else>
                 <article class="pokemon-article">

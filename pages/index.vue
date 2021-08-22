@@ -6,35 +6,31 @@
                                  @found="showPokemon($event)"
                                  @error="showError($event)" />
 
+            <div v-if="displaySearchingResult"
+                 class="pokemon-found">
+                <pokemon-card-link v-if="searchingPokemon"
+                                   :pokemon="searchingPokemon" />
+                <p v-else>{{ $t('indexPage.searchSection.noneFoundLabel') }}</p>
+
+                <base-button :label="$t('indexPage.searchSection.seeAllButtonLabel')"
+                             class="show-all-button primary uppercase"
+                             @click="showAll()" />
+            </div>
+
+            <template v-else>
+                <ul class="pokemon-list">
+                    <li v-for="pokemon in pokemons"
+                        :key="pokemon.name">
+                        <pokemon-card-link :pokemon="pokemon" />
+                    </li>
+                </ul>
+            </template>
+
             <template v-if="$fetchState.error">
                 <p>{{ $t('app.errorLabel') }}</p>
             </template>
 
-            <template v-else-if="$fetchState.pending ">
-                <p>{{ $t('app.loadingLabel') }}</p>
-            </template>
-
-            <template v-else>
-                <div v-if="displaySearchingResult"
-                     class="pokemon-found">
-                    <pokemon-card-link v-if="searchingPokemon"
-                                       :pokemon="searchingPokemon" />
-                    <p v-else>{{ $t('indexPage.searchSection.noneFoundLabel') }}</p>
-
-                    <base-button :label="$t('indexPage.searchSection.seeAllButtonLabel')"
-                                 class="show-all-button primary uppercase"
-                                 @click="showAll()" />
-                </div>
-
-                <template v-else>
-                    <ul class="pokemon-list">
-                        <li v-for="pokemon in pokemons"
-                            :key="pokemon.name">
-                            <pokemon-card-link :pokemon="pokemon" />
-                        </li>
-                    </ul>
-                </template>
-            </template>
+            <app-loader v-else-if="$fetchState.pending || pokemonsAreLoading" />
         </section>
     </layout-default>
 </template>
@@ -53,6 +49,9 @@ export default {
     computed: {
         pokemons() {
             return this.$store.state.pokemons.list;
+        },
+        pokemonsAreLoading() {
+            return !this.$store.state.pokemons.loaded;
         }
     },
     mounted() {

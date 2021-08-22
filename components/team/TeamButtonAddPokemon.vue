@@ -1,6 +1,8 @@
 <template>
-    <base-button :label="$t('team.buttonAddPokemon.label')"
-                 class="pokemon-to-team-button uppercase hovered-border"
+    <base-button class="pokemon-to-team-button hovered-border"
+                 color="info"
+                 size="small"
+                 :label="$t('team.buttonAddPokemon.label')"
                  :class="[`border-color-${pokemon.defaultType}`]"
                  @click="addToTeam()" />
 </template>
@@ -20,15 +22,3 @@ export default {
     }
 }
 </script>
-
-<style lang="scss" scoped>
-.pokemon-to-team-button {
-    border-radius: 1rem;
-    font-weight: 600;
-    padding: 1rem 3rem;
-    justify-content: center;
-    white-space: nowrap;
-    font-size: 1.2rem;
-    background-color: $white;
-}
-</style>

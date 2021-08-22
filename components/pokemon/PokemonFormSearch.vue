@@ -9,7 +9,8 @@
                     required />
 
         <base-button :label="$t('pokemon.formSearch.submitButtonLabel')"
-                     class="primary uppercase"
+                     color="primary"
+                     size="small"
                      :isLoading="isSearching"
                      type="submit" />
     </form>

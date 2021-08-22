@@ -1,66 +1,97 @@
 import BaseButton from './BaseButton.vue';
 
+import i18n from '@/.storybook/i18n';
+
 export default {
   title: 'Base/BaseButton',
   component: BaseButton,
   argTypes: { onClick: { action: 'clicked' } },
 };
 
-const TemplatePrimary = (args, { argTypes }) => ({
+const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { BaseButton },
-  template: '<base-button class="primary uppercase" @click="onClick" v-bind="$props" />',
+  template: '<base-button @click="onClick" v-bind="$props" />',
+  i18n: i18n,
 });
 
-export const Primary = TemplatePrimary.bind({});
+export const Default = Template.bind({});
+Default.args = {
+  label: 'Mon bouton',
+  isLoading: false,
+};
+
+export const Primary = Template.bind({});
 Primary.args = {
   label: 'Mon bouton',
-  isLoading: false
+  isLoading: false,
+  color: "primary",
+  loaderColor: "#fff",
 };
 
-export const PrimaryLoading = TemplatePrimary.bind({});
+export const PrimarySmall = Template.bind({});
+PrimarySmall.args = {
+  ...Primary.args,
+  size: "small",
+};
+
+export const PrimaryLoading = Template.bind({});
 PrimaryLoading.args = {
-  label: 'Mon bouton',
+  ...Primary.args,
   isLoading: true,
-  loaderColor: "#fff"
 };
 
-export const PrimaryDisabled = TemplatePrimary.bind({});
+export const PrimaryDisabled = Template.bind({});
 PrimaryDisabled.args = {
-  label: 'Mon bouton',
+  ...Primary.args,
   disabled: true,
 };
 
-const TemplateSecondary = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { BaseButton },
-  template: '<base-button class="secondary uppercase" @click="onClick" v-bind="$props" />',
-});
-
-export const Secondary = TemplateSecondary.bind({});
+export const Secondary = Template.bind({});
 Secondary.args = {
   label: 'Mon bouton',
-  isLoading: false
+  isLoading: false,
+  color: "secondary",
+  loaderColor: "#fff"
 };
 Secondary.parameters = {
   backgrounds: { default: 'white' }
 };
 
-export const SecondaryLoading = TemplateSecondary.bind({});
+export const SecondaryLoading = Template.bind({});
 SecondaryLoading.args = {
-  label: 'Mon bouton',
+  ...Secondary.args,
   isLoading: true,
-  loaderColor: "#fff"
 };
 SecondaryLoading.parameters = {
   backgrounds: { default: 'white' }
 };
 
-export const SecondaryDisabled = TemplateSecondary.bind({});
+export const SecondaryDisabled = Template.bind({});
 SecondaryDisabled.args = {
-  label: 'Mon bouton',
+  ...Secondary.args,
   disabled: true,
 };
 SecondaryDisabled.parameters = {
   backgrounds: { default: 'white' }
+};
+
+export const Info = Template.bind({});
+Info.args = {
+  label: 'Mon bouton',
+  isLoading: false,
+  color: "info",
+  loaderColor: "#f6f8fc"
+};
+
+export const InfoLoading = Template.bind({});
+InfoLoading.args = {
+  ...Info.args,
+  isLoading: true,
+};
+
+export const InfoDisabled = Template.bind({});
+InfoDisabled.args = {
+  ...Info.args,
+  disabled: true,
 };

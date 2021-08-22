@@ -1,9 +1,12 @@
+import Vue from 'vue';
 import Vuex from "vuex";
 
 import axios from "axios";
 import i18n from '@/.storybook/i18n';
 
 import PokemonService from "../services/pokemon.service";
+
+Vue.use(Vuex);
 
 PokemonService.$axios = axios;
 

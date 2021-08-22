@@ -10,7 +10,7 @@ export default {
 
 const modalHeader = `<template slot="header"><h1>Mon header</h1></template>`;
 const modalBody = `<template slot="body"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></template>`;
-const modalFooter = `<template slot="footer"><base-button label="Fermer" class="secondary" @click="onClose" /></template>`;
+const modalFooter = `<template slot="footer"><base-button color="secondary" label="Fermer" @click="onClose" /></template>`;
 
 const Template = (args, { argTypes }) => ({
     props: Object.keys(argTypes),

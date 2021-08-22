@@ -10,7 +10,8 @@
                     required />
 
         <base-button :label="$t('team.formSurname.submitButtonLabel')"
-                     class="primary uppercase"
+                     color="primary"
+                     size="small"
                      type="submit" />
     </form>
 </template>

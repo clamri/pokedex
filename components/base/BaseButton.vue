@@ -1,14 +1,11 @@
 <template>
     <button :type="type"
             :disabled="isLoading"
+            :class="classes"
             @click="click()">
-        <span class="label"
-              :data-state="isLoading ? 'hidden' : ''">
-            <span>{{ label }}</span>
-        </span>
+        <span class="label">{{ label }}</span>
 
         <base-loader v-if="isLoading"
-                     class="loading"
                      :color="loaderColor" />
     </button>
 </template>
@@ -24,9 +21,6 @@ export default {
             type: Boolean,
             default: false
         },
-        loaderColor: {
-            type: String
-        },
         type: {
             type: String,
             default: "button",
@@ -34,7 +28,37 @@ export default {
                 return ['button', 'submit'].indexOf(value) !== -1
             }
         },
+        color: {
+            type: String,
+            validator: function (value) {
+                // future other possibilities: success, error, warning
+                return ['primary', 'secondary', 'info'].indexOf(value) !== -1;
+            },
+        },
+        size: {
+            type: String,
+            validator: function (value) {
+                // future other possibilities: large
+                return ['small', 'medium'].indexOf(value) !== -1;
+            },
+        },
+        loaderColor: {
+            type: String
+        },
     },
+
+    computed: {
+        classes() {
+            return {
+                'button': this.color,
+                ...(this.color && { [`button--${this.color}`]: true }),
+                ...(this.color && { 'uppercase': true }),
+                ...((this.color || this.size) && { [`button--${this.size ? this.size : 'medium'}`]: true }),
+                'button--loading': this.isLoading
+            };
+        },
+    },
+
     methods: {
         click() {
             this.$emit("click");
@@ -47,17 +71,13 @@ export default {
 button {
     position: relative;
 
-    [data-state="hidden"] {
-        visibility: hidden;
-    }
-
     .label {
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
-    .loading {
+    .loader {
         position: absolute !important;
         top: 50%;
         left: 50%;
@@ -68,15 +88,14 @@ button {
         cursor: default;
     }
 
-    &.primary,
-    &.secondary {
+    &.button {
         border-radius: 1rem;
         font-weight: 600;
-        padding: 0.75rem 2rem;
         display: flex;
         align-items: center;
         justify-content: center;
         border: solid 2px transparent;
+        white-space: nowrap;
 
         &:disabled {
             filter: grayscale(0.5);
@@ -88,7 +107,13 @@ button {
         }
     }
 
-    &.primary {
+    &.button--loading {
+        .label {
+            visibility: hidden;
+        }
+    }
+
+    &.button--primary {
         background-color: $primary-color;
         color: $white;
 
@@ -98,7 +123,7 @@ button {
         }
     }
 
-    &.secondary {
+    &.button--secondary {
         background-color: $background-color;
 
         &:hover:not(:disabled),
@@ -109,6 +134,24 @@ button {
         &:disabled {
             background-color: rgba(0, 0, 0, 0.1);
         }
+    }
+
+    &.button--info {
+        background-color: $white;
+
+        &:disabled {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    &.button--small {
+        padding: 1rem 3rem;
+        font-size: 1.2rem;
+    }
+
+    &.button--medium {
+        padding: 0.75rem 2rem;
+        font-size: 1.5rem;
     }
 }
 </style>

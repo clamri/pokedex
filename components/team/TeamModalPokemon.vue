@@ -20,11 +20,13 @@
         </template>
         <template slot="footer">
             <base-button :label="$t('team.modalPokemon.removeFromTeamButtonLabel')"
-                         class="primary"
+                         color="primary"
+                         size="small"
                          @click="removeFromTeam()" />
 
             <base-button :label="$t('team.modalPokemon.closeModalButtonLabel')"
-                         class="secondary"
+                         color="secondary"
+                         size="small"
                          @click="closePokemonModal()" />
         </template>
     </base-modal>

@@ -22,7 +22,8 @@
                     <p v-else>{{ $t('indexPage.searchSection.noneFoundLabel') }}</p>
 
                     <base-button :label="$t('indexPage.searchSection.seeAllButtonLabel')"
-                                 class="show-all-button primary uppercase"
+                                 class="show-all-button"
+                                 color="primary"
                                  @click="showAll()" />
                 </div>
 

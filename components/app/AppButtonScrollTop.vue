@@ -1,7 +1,7 @@
 <template>
     <button type="button"
             class="app-button-scroll-top"
-            :class="{ 'is-visible': showBackToTopButton }"
+            :class="classes"
             :aria-label="$t('app.buttonScrollTop.ariaLabel')"
             @click="scroll()">
         <i class="icon-chevron-up"
@@ -18,9 +18,19 @@ export default {
             showBackToTopButton: false
         }
     },
+
+    computed: {
+        classes() {
+            return {
+                'app-button-scroll-top--hidden': !this.showBackToTopButton,
+            };
+        },
+    },
+
     mounted() {
         document.addEventListener('scroll', this.handleScroll);
     },
+
     methods: {
         scroll() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -29,6 +39,7 @@ export default {
             this.showBackToTopButton = window.scrollY > window.innerHeight;
         }
     },
+
     beforeDestroy() {
         this.scrollElement?.removeEventListener("scroll", this.handleScroll);
     }
@@ -44,22 +55,22 @@ export default {
     position: fixed;
     right: 3rem;
     bottom: 3rem;
-    visibility: hidden;
-    opacity: 0;
     transition: all 0.5s linear;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 2;
+    visibility: visible;
+    opacity: 0.8;
 
     i {
         font-size: 2rem;
         margin-bottom: 0.2rem;
     }
 
-    &.is-visible {
-        visibility: visible;
-        opacity: 0.8;
+    &.app-button-scroll-top--hidden {
+        visibility: hidden;
+        opacity: 0;
     }
 }
 </style>

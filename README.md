@@ -1,5 +1,9 @@
 # pokedex
 
+## Demo
+
+The website demonstration is available [here](https://celia-lamri-pokedex.herokuapp.com/). It is hosted on a free Heroku server, so it make take a while to launch. 
+
 ## Build Setup
 
 ```bash

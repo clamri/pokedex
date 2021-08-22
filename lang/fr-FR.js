@@ -7,7 +7,11 @@ module.exports = {
             ariaLabel: "Retour en haut de la page"
         },
         errorLabel: "Une erreur est survenue",
-        loadingLabel: "Chargement en cours"
+        loadingLabel: "Chargement en cours",
+        errorPage: {
+            content: "Oups, cette page n'existe pas !",
+            backHomePageLinkLabel: "Retour à la page d'accueil"
+        }
     },
     base: {
         input: {

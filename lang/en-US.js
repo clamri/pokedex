@@ -7,7 +7,11 @@ module.exports = {
             ariaLabel: "Back to top"
         },
         errorLabel: "An error occurred, please try again later",
-        loadingLabel: "Loading"
+        loadingLabel: "Loading",
+        errorPage: {
+            content: "Oops, this page doesn't exist!",
+            backHomePageLinkLabel: "Back to home"
+        }
     },
     base: {
         input: {
